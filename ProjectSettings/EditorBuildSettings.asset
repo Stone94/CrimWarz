@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/01 Menu/01_ Splash 1.unity
+    guid: fa96a2689a033374bb759d365b5b0f36
+  - enabled: 1
+    path: Assets/_Scenes/01 Menu/01_ Splash 2.unity
+    guid: 5d6064044c1c9c94b8beebd05ec8aa5e
+  - enabled: 1
+    path: Assets/_Scenes/01 Menu/01a Start Menu.unity
+    guid: 518c61e892d3c924b950840a31fe555f
+  - enabled: 1
+    path: Assets/_Scenes/01 Menu/01b Options.unity
+    guid: bab5e58b10e2731438d705f79e5feec8
+  - enabled: 1
+    path: Assets/_Scenes/01 Menu/01c Load.unity
+    guid: 49cbc511cd72fa944897322bf28977d5
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02a SafeHouse.unity
+    guid: 26d28038ed928e44d980e28e4c42da0d
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02b Travel.unity
+    guid: 1fa15570dd7f05142b7e55a642004685
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02c Hire Employees.unity
+    guid: f1e3372b892af2c459e1a6829125a7e1
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02d Stock Market.unity
+    guid: cc01d70b47dcfab499a7593f21d31f2b
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02e Rivals.unity
+    guid: 931326ce451280b47ac6b8eba54c57cf
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02f Real Estate.unity
+    guid: 3eecf1c2c0fcfe94886eb9e335629f5f
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02g Research.unity
+    guid: 1c37cd9163f104143aa5f10584c31164
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02h Production.unity
+    guid: c8b71372435e75d45b3435ebbeea401e
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02i Hospital.unity
+    guid: de22fa00f48740e4199bad206fd09ade
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02j Favors.unity
+    guid: f7c48092c197b2e4d8170883f59702c0
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02k Territory.unity
+    guid: 69ff45fc27ba2ea46a596148b71e4ec9
+  - enabled: 1
+    path: Assets/_Scenes/02 SafeHouse Scenes/02l Black Market.unity
+    guid: 00162e8ee4dfbba408f787b00306436e
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03a Slums.unity
+    guid: ba24afc9129c2394cb218e015da9459a
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03b Ghetto.unity
+    guid: 1c759b72d4b39d645a78c96073064907
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03c Urbz.unity
+    guid: 959e6260777a69a42ad818a3f119d2e4
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03d Downtown.unity
+    guid: c4da3f2fda915974eba2c0c272737ff8
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03e Docks.unity
+    guid: 071b071c66dc752498ad0f9e5f3c1a9c
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03f Chinatown.unity
+    guid: c631b91c21c1e914caff8fe0f07caf46
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03g Uptown.unity
+    guid: 33a44314e8bdf834090a486fb8eab7f2
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03h The Strip.unity
+    guid: 5fde0b1e2800058469a13fa6554dced0
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03i The RedLightDistrict.unity
+    guid: 5e008ebbb3e261648ad7c23dd0edb90d
+  - enabled: 1
+    path: Assets/_Scenes/03 Level Scenes/03j Market District.unity
+    guid: 00abfd2f70cbd1d4fb4c68f90efb2352
+  - enabled: 1
+    path: Assets/_Scenes/99 Lose Scenes/01d Lose.unity
+    guid: 0bf9d15c7caf4d64683e165538f64a14
+  - enabled: 0
+    path: Assets/_Scenes/99 Lose Scenes/01d Lose 1.unity
+    guid: adfc903bc787978408998c163e7a147a

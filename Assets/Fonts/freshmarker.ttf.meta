@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6669abafc4df73a498e1845b592127f4
+timeCreated: 1511054239
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fresh Marker
+  fontNames:
+  - Fresh Marker
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4d3e58cc9c9b8b74c94f09ac3a8e23ae
+timeCreated: 1511054230
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: graffonti.3d.drop
+  fontNames:
+  - graffonti.3d.drop
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

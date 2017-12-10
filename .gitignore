@@ -33,3 +33,10 @@ sysinfo.txt
 # Builds 
 *.apk 
 *.unitypackage
+Library/
+
+\.hg/store/
+
+\.hg/
+
+obj/
