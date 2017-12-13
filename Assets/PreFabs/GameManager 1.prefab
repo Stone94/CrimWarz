@@ -35,7 +35,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1145791696462952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92d73c3f73c23f4398914eda1c2b9a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ef1292e6d30ad74c8b8dea7f56fc3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ludeCostBuyDisp: {fileID: 0}
@@ -54,8 +54,6 @@ MonoBehaviour:
   cokeOwnedBuyDisp: {fileID: 0}
   heroinCostBuyDisp: {fileID: 0}
   heroinOwnedBuyDisp: {fileID: 0}
-  PC: {fileID: 0}
-  Dg: {fileID: 0}
   ludesCost: 0
   weedCost: 0
   shroomCost: 0

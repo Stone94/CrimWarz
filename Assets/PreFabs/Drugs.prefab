@@ -38,11 +38,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e467fb08b889748a97314ddae059e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 0}
-  PC: {fileID: 0}
+  BMD: {fileID: 0}
   amountSlider: {fileID: 0}
   amountSliderText: {fileID: 0}
-  maxDrugs: 99
 --- !u!224 &224963939934568164
 RectTransform:
   m_ObjectHideFlags: 1

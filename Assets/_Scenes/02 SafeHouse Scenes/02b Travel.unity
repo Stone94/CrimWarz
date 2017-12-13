@@ -1009,9 +1009,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 571838613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ef4271e22c85e4f9f1268b44899c72, type: 3}
+  m_Script: {fileID: 11500000, guid: 07fd770e71311274ab6b14bc3971224d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BustedDisp: {fileID: 0}
+  MuggedDisp: {fileID: 0}
+  isBusted: 0
+  isMugged: 0
+  muggedChanceMin: 0
+  muggedChanceMax: 0
+  bustedChanceMax: 0
+  bustedChanceMin: 0
 --- !u!1001 &578578159
 Prefab:
   m_ObjectHideFlags: 0

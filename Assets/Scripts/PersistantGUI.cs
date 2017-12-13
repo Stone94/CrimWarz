@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PersistantGUI : MonoBehaviour {
 
-	public PlayerCharacter PC;
+	public static PersistantGUI GUI;
 
 	public Text dateDisp, timeDisp, moneyDisp, debtDisp, cryptoDisp, 
 		playerHealthDisp, playerRepDisp;
@@ -13,21 +13,17 @@ public class PersistantGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		PC = GameObject.FindObjectOfType<PlayerCharacter>();
 		UpdateUI ();
-
-
-
 	}
 
 	public void UpdateUI ()
 	{
-		playerHealthDisp.text = "Health: " + PC.health;
-		playerRepDisp.text = "Rep: " + PC.rep;
-		dateDisp.text = "Days: " + PC.days;
-		timeDisp.text = "Time: " + PC.hours;
-		moneyDisp.text = "Cash: $" + Mathf.Round (PC.cash);
-		debtDisp.text = "Debt: $" + Mathf.Round (PC.debtLeft);
-		cryptoDisp.text = "Crypto: $" + Mathf.Round (PC.cryptoC);
+		playerHealthDisp.text = "Health: " + PlayerCharacter.playChar.health;
+		playerRepDisp.text = "Rep: " + PlayerCharacter.playChar.rep;
+		dateDisp.text = "Days: " + PlayerCharacter.playChar.days;
+		timeDisp.text = "Time: " + PlayerCharacter.playChar.hours;
+		moneyDisp.text = "Cash: $" + Mathf.Round (PlayerCharacter.playChar.cash);
+		debtDisp.text = "Debt: $" + Mathf.Round (PlayerCharacter.playChar.debtLeft);
+		cryptoDisp.text = "Crypto: $" + Mathf.Round (PlayerCharacter.playChar.cryptoC);
 	}
 }

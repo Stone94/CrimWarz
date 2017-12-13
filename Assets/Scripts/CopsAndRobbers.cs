@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CopsAndRobbers : MonoBehaviour 
 {
-	public PlayerCharacter PC;
+
 	public GameObject BustedDisp, MuggedDisp;
 
 	public bool isBusted = false, isMugged = false;
@@ -12,11 +12,6 @@ public class CopsAndRobbers : MonoBehaviour
 
 	private int muggedChance, bustedChance;
 	public int muggedChanceMin, muggedChanceMax, bustedChanceMax, bustedChanceMin;
-
-	void Update()
-	{
-		PC = GameObject.FindObjectOfType<PlayerCharacter>();
-	}
 
 	public void Busted ()
 	{
@@ -26,17 +21,17 @@ public class CopsAndRobbers : MonoBehaviour
 		{
 			isBusted = true;
 			Debug.Log ("Your Busted");
-			PC.cash *= 0.95f;
-			PC.weedOwned = 0;
-			PC.shroomOwned = 0;
-			PC.LSDOwned = 0;
-			PC.speedOwned = 0;
-			PC.methOwned = 0;
-			PC.cokeOwned = 0;
-			PC.heroinOwned = 0;
+			PlayerCharacter.playChar.cash *= 0.95f;
+			PlayerCharacter.playChar.weedOwned = 0;
+			PlayerCharacter.playChar.shroomOwned = 0;
+			PlayerCharacter.playChar.LSDOwned = 0;
+			PlayerCharacter.playChar.speedOwned = 0;
+			PlayerCharacter.playChar.methOwned = 0;
+			PlayerCharacter.playChar.cokeOwned = 0;
+			PlayerCharacter.playChar.heroinOwned = 0;
 			BustedDisp.SetActive(true);
-			PC.health -= 10;
-			PC.hours += 4;
+			PlayerCharacter.playChar.health -= 10;
+			PlayerCharacter.playChar.hours += 4;
 		}
 	}
 
@@ -47,10 +42,10 @@ public class CopsAndRobbers : MonoBehaviour
 		{
 			isMugged = true;
 			Debug.Log ("Your Mugged");
-			PC.cash *= 0.5f;
-			PC.health -= 10;
+			PlayerCharacter.playChar.cash *= 0.5f;
+			PlayerCharacter.playChar.health -= 10;
 			MuggedDisp.SetActive (true);
-			PC.hours += 6;
+			PlayerCharacter.playChar.hours += 6;
 		}
 	}
 

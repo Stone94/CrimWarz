@@ -38,7 +38,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3b5e343e0ffd4c8470afed6f1053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PC: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c, type: 2}
   dateDisp: {fileID: 0}
   timeDisp: {fileID: 0}
   moneyDisp: {fileID: 0}

@@ -52,10 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BankScript.cs" />
+     <Compile Include="Assets\Scripts\BuyMenuDisp.cs" />
      <Compile Include="Assets\Scripts\CopsAndRobbers.cs" />
      <Compile Include="Assets\Scripts\DepositButton.cs" />
      <Compile Include="Assets\Scripts\Drugs.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameOverConditions.cs" />
      <Compile Include="Assets\Scripts\GamePause.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\LoanShark.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\PersistantGUI.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\SplashLoad.cs" />
+     <Compile Include="Assets\Scripts\TimeManagement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

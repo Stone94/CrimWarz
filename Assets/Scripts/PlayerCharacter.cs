@@ -8,10 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour 
 {
-
 	public static PlayerCharacter playChar;
-
-	public GameManager GM;
 
 	public float health;
 	public float cash;
@@ -32,9 +29,6 @@ public class PlayerCharacter : MonoBehaviour
 
 	void Awake () 
 	{
-		Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
-		GM = GameObject.FindObjectOfType<GameManager>();
-		// Make sure only one player character object exists, create it if it doesnt
 		dontDestroyPlayerOnLoad ();
 	}
 
@@ -49,65 +43,7 @@ public class PlayerCharacter : MonoBehaviour
 				Destroy (gameObject);
 			}
 	}
-
-	void Start ()
-	{
-		StartCoroutine (time ());
-	}
-
-	// Update is called once per frame
-	void Update () 
-	{
-		gameOverDebt (); 
-		gameOverDeath ();
-	}
 		
-
-
-	// creates the timer
-	private void timeAdd()
-	{
-		hours += 1;
-
-		if (hours >= 24) 
-		{
-			days += 1;
-			hours = 0;
-			debtLeft *= 1.10f;
-			bankBalance = (bankBalance + rep) * 1.12f;
-			rep += 1;
-		}
-	}
-
-
-
-	// sets the debt related lose condition
-	public void gameOverDebt()
-	{
-		if (debtLeft >= 20000f || days >= 30 && debtLeft >= 1f)
-			SceneManager.LoadScene("01d Lose");
-	}
-
-	public void gameOverDeath()
-	{
-		if (health <= 0) 
-		{
-			SceneManager.LoadScene ("01d Lose 1");
-		}
-
-	}
-	// while time remains true wait one second then add time
-	IEnumerator time()
-	{
-		while (true) 
-		{
-			timeAdd ();
-			yield return new WaitForSeconds (2);
-		}
-	}
-
-
-
 
 	// write game data to a file
 	public void Save()
@@ -118,26 +54,28 @@ public class PlayerCharacter : MonoBehaviour
 
 
 		PlayerDataa data = new PlayerDataa ();
-		data.bankBalance = bankBalance;
-		data.health = health;
-		data.cash = cash;
-		data.cryptoC = cryptoC;
-		data.debtLeft = debtLeft;
-		data.ludesOwned = ludesOwned;
-		data.weedOwned = weedOwned;
-		data.shroomOwned = shroomOwned;
-		data.LSDOwned = LSDOwned;
-		data.speedOwned = speedOwned;
-		data.methOwned = methOwned;
-		data.cokeOwned = cokeOwned;
-		data.heroinOwned = heroinOwned;
-		data.hours = hours;
-		data.days = days;
-		data.rep = rep;
+		data.bankBalance = playChar.bankBalance;
+		data.health = playChar.health;
+		data.cash = playChar.cash;
+		data.cryptoC = playChar.cryptoC;
+		data.debtLeft = playChar.debtLeft;
+		data.ludesOwned = playChar.ludesOwned;
+		data.weedOwned = playChar.weedOwned;
+		data.shroomOwned = playChar.shroomOwned;
+		data.LSDOwned = playChar.LSDOwned;
+		data.speedOwned = playChar.speedOwned;
+		data.methOwned = playChar.methOwned;
+		data.cokeOwned = playChar.cokeOwned;
+		data.heroinOwned = playChar.heroinOwned;
+		data.hours = playChar.hours;
+		data.days = playChar.days;
+		data.rep = playChar.rep;
 		Debug.Log ("Saving to: " + Application.persistentDataPath);
 		bf.Serialize (file, data);
 		file.Close ();
-		Debug.Log (cash.ToString());
+		Debug.Log (playChar.cash.ToString());
+
+		Debug.Log (data.cash.ToString());
 	}
 
 	// read game data from a file
@@ -150,23 +88,25 @@ public class PlayerCharacter : MonoBehaviour
 			PlayerDataa data = (PlayerDataa)bf.Deserialize (file);
 			file.Close ();
 
-			bankBalance = data.bankBalance;
-			health = data.health;
-			cash = data.cash;
-			cryptoC = data.cryptoC;
-			debtLeft = data.debtLeft;
-			ludesOwned = data.ludesOwned;
-			weedOwned = data.weedOwned;
-			shroomOwned = data.shroomOwned;
-			LSDOwned = data.LSDOwned;
-			speedOwned = data.speedOwned;
-			methOwned = data.methOwned;
-			cokeOwned = data.cokeOwned;
-			heroinOwned = data.heroinOwned;
-			hours = data.hours;
-			days = data.days;
-			rep = data.rep;
+			playChar.bankBalance = data.bankBalance;
+			playChar.health = data.health;
+			playChar.cash = data.cash;
+			playChar.cryptoC = data.cryptoC;
+			playChar.debtLeft = data.debtLeft;
+			playChar.ludesOwned = data.ludesOwned;
+			playChar.weedOwned = data.weedOwned;
+			playChar.shroomOwned = data.shroomOwned;
+			playChar.LSDOwned = data.LSDOwned;
+			playChar.speedOwned = data.speedOwned;
+			playChar.methOwned = data.methOwned;
+			playChar.cokeOwned = data.cokeOwned;
+			playChar.heroinOwned = data.heroinOwned;
+			playChar.hours = data.hours;
+			playChar.days = data.days;
+			playChar.rep = data.rep;
+			Debug.Log (playChar.cash.ToString());
 
+			Debug.Log (data.cash.ToString());
 		}
 	}
 }
@@ -175,10 +115,9 @@ public class PlayerCharacter : MonoBehaviour
 [Serializable]
 class PlayerDataa
 {
-	
-	public float health = PlayerCharacter.playChar.health;
-	public float bankBalance = PlayerCharacter.playChar.bankBalance;
-	public float cash = PlayerCharacter.playChar.cash;
+	public float health;
+	public float bankBalance;
+	public float cash;
 	public float cryptoC;
 	public float debtLeft;
 	public float ludesOwned;
@@ -192,5 +131,4 @@ class PlayerDataa
 	public int hours;
 	public int days;
 	public int rep;
-
 }

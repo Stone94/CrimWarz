@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4288139269771592}
   - component: {fileID: 114477184953499544}
+  - component: {fileID: 114320836918392880}
+  - component: {fileID: 114285602037896646}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -40,6 +42,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114285602037896646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273283870569012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13104a42eb5843d4da423152a93626f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114320836918392880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273283870569012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b4ee463f6846e4e8734d3592979730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114477184953499544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,9 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7f17d7bf5059b4d890507352206c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 0}
   health: 100
-  cash: 1000
+  cash: 500
   cryptoC: 0
   debtLeft: 5000
   ludesOwned: 0

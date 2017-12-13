@@ -4,23 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour 
+public class BuyMenuDisp : MonoBehaviour 
 {
-
+	public static BuyMenuDisp BMD;
 	public Text ludeCostBuyDisp, ludeOwnedBuyDisp, weedCostBuyDisp, weedOwnedBuyDisp, shroomCostBuyDisp, shroomOwnedBuyDisp, 
 	LSDCostBuyDisp, LSDOwnedBuyDisp, speedCostBuyDisp, speedOwnedBuyDisp, methCostBuyDisp, methOwnedBuyDisp, cokeCostBuyDisp,
 	cokeOwnedBuyDisp, heroinCostBuyDisp,heroinOwnedBuyDisp;
 
-	public PlayerCharacter PC;
-	public Drugs Dg;
-
-
 	public float ludesCost, weedCost, shroomCost, LSDCost, speedCost, methCost, cokeCost, heroinCost;
 
-	void Awake()
-	{
-		PC = GameObject.FindObjectOfType<PlayerCharacter>();
-	}
 
 	void Update () 
 	{
@@ -31,28 +23,28 @@ public class GameManager : MonoBehaviour
 	public void setUITextValues()
 	{
 		ludeCostBuyDisp.text = "$" + Mathf.Round(ludesCost);
-		ludeOwnedBuyDisp.text = PC.ludesOwned.ToString ();
+		ludeOwnedBuyDisp.text = PlayerCharacter.playChar.ludesOwned.ToString ();
 
 		weedCostBuyDisp.text = "$" + Mathf.Round(weedCost);
-		weedOwnedBuyDisp.text = PC.weedOwned.ToString ();
+		weedOwnedBuyDisp.text = PlayerCharacter.playChar.weedOwned.ToString ();
 
 		shroomCostBuyDisp.text = "$" + Mathf.Round(shroomCost);
-		shroomOwnedBuyDisp.text = PC.shroomOwned.ToString ();
+		shroomOwnedBuyDisp.text = PlayerCharacter.playChar.shroomOwned.ToString ();
 	
 		LSDCostBuyDisp.text = "$" + Mathf.Round(LSDCost);
-		LSDOwnedBuyDisp.text = PC.LSDOwned.ToString ();
+		LSDOwnedBuyDisp.text = PlayerCharacter.playChar.LSDOwned.ToString ();
 	
 		speedCostBuyDisp.text = "$" + Mathf.Round(speedCost);
-		speedOwnedBuyDisp.text = PC.speedOwned.ToString ();
+		speedOwnedBuyDisp.text = PlayerCharacter.playChar.speedOwned.ToString ();
 	
 		methCostBuyDisp.text = "$" + Mathf.Round(methCost);
-		methOwnedBuyDisp.text = PC.methOwned.ToString ();
+		methOwnedBuyDisp.text = PlayerCharacter.playChar.methOwned.ToString ();
 	
 		cokeCostBuyDisp.text = "$" + Mathf.Round(cokeCost);
-		cokeOwnedBuyDisp.text = PC.cokeOwned.ToString ();
+		cokeOwnedBuyDisp.text = PlayerCharacter.playChar.cokeOwned.ToString ();
 	
 		heroinCostBuyDisp.text = "$" + Mathf.Round(heroinCost);
-		heroinOwnedBuyDisp.text = PC.heroinOwned.ToString ();
+		heroinOwnedBuyDisp.text = PlayerCharacter.playChar.heroinOwned.ToString ();
 
 	}
 
