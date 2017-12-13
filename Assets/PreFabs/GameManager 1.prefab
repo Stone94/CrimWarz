@@ -54,21 +54,21 @@ MonoBehaviour:
   cokeOwnedBuyDisp: {fileID: 0}
   heroinCostBuyDisp: {fileID: 0}
   heroinOwnedBuyDisp: {fileID: 0}
-  ludesCost: 0
-  weedCost: 0
-  shroomCost: 0
-  LSDCost: 0
-  speedCost: 0
-  methCost: 0
-  cokeCost: 0
-  heroinCost: 0
+  ludesCost: 33.95223
+  weedCost: 209.8469
+  shroomCost: 394.65002
+  LSDCost: 998.66437
+  speedCost: 3483.643
+  methCost: 11749.903
+  cokeCost: 27103.99
+  heroinCost: 47237.402
 --- !u!224 &224010163045081192
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145791696462952}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -77,6 +77,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1518.55, y: 408.84512}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

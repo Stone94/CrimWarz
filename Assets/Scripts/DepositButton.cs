@@ -10,7 +10,7 @@ public class DepositButton : MonoBehaviour
 	{
 		if ( transferAmount <= PlayerCharacter.playChar.cash) {
 			PlayerCharacter.playChar.cash -= transferAmount;
-			PlayerCharacter.playChar.bankBalance += transferAmount;
+			PlayerCharacter.playChar.bankBalance += transferAmount * 0.30f;
 		}
 	}
 

@@ -20,7 +20,7 @@ public class TimeManagement : MonoBehaviour {
 			PlayerCharacter.playChar.days += 1;
 			PlayerCharacter.playChar.hours = 0;
 			PlayerCharacter.playChar.debtLeft *= 1.10f;
-			PlayerCharacter.playChar.bankBalance = PlayerCharacter.playChar.bankBalance;
+			PlayerCharacter.playChar.bankBalance = PlayerCharacter.playChar.bankBalance * 1.25f;
 			PlayerCharacter.playChar.rep += 1;
 		}
 	}

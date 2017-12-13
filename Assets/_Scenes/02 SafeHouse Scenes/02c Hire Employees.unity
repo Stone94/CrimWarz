@@ -483,29 +483,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
         type: 2}
-      propertyPath: PC
-      value: 
-      objectReference: {fileID: 1591863467}
-    - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
-        type: 2}
-      propertyPath: muggedChanceMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
-        type: 2}
-      propertyPath: MuggedDisp
-      value: 
-      objectReference: {fileID: 571838613}
-    - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
-        type: 2}
       propertyPath: BustedDisp
       value: 
       objectReference: {fileID: 1665459798}
     - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
         type: 2}
-      propertyPath: bustedChanceMin
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: MuggedDisp
+      value: 
+      objectReference: {fileID: 571838613}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03fc642e7d8d70741bcc118398bd4f96, type: 2}
   m_IsPrefabParent: 0
@@ -3709,12 +3694,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224234909107840694, guid: bd499797488c1af449767c550d15e16d,
     type: 2}
   m_PrefabInternal: {fileID: 1756572856}
---- !u!114 &1591863467 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1750578349}
-  m_Script: {fileID: 11500000, guid: db7f17d7bf5059b4d890507352206c28, type: 3}
 --- !u!1001 &1608607248
 Prefab:
   m_ObjectHideFlags: 0

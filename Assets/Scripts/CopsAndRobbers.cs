@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CopsAndRobbers : MonoBehaviour 
 {
-
+	public AudioClip cop;
+	public AudioClip robber;
 	public GameObject BustedDisp, MuggedDisp;
 
 	public bool isBusted = false, isMugged = false;
@@ -32,6 +33,7 @@ public class CopsAndRobbers : MonoBehaviour
 			BustedDisp.SetActive(true);
 			PlayerCharacter.playChar.health -= 10;
 			PlayerCharacter.playChar.hours += 4;
+			AudioSource.PlayClipAtPoint (cop, transform.position);
 		}
 	}
 
@@ -46,6 +48,7 @@ public class CopsAndRobbers : MonoBehaviour
 			PlayerCharacter.playChar.health -= 10;
 			MuggedDisp.SetActive (true);
 			PlayerCharacter.playChar.hours += 6;
+			AudioSource.PlayClipAtPoint (robber, transform.position);
 		}
 	}
 
