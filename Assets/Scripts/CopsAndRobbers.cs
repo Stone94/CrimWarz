@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class CopsAndRobbers : MonoBehaviour 
 {
+	//TODO These later need to be switched to a turn based fighting system
+
 	public AudioClip cop;
 	public AudioClip robber;
 	public GameObject BustedDisp, MuggedDisp;
+
+	public float bribeLoss, muggedLoss;
 
 	public bool isBusted = false, isMugged = false;
 
@@ -16,13 +20,18 @@ public class CopsAndRobbers : MonoBehaviour
 
 	public void Busted ()
 	{
+		// set the chance to get busted between a certain value;
+
 		bustedChance = Random.Range (bustedChanceMin, bustedChanceMax);
+
+		/* if the player gets busted, take a percentage of his cash, 
+		 * all his drugs and increase his hours to simulate an arrest */
 
 		if (bustedChance >= 90)
 		{
 			isBusted = true;
 			Debug.Log ("Your Busted");
-			PlayerCharacter.playChar.cash *= 0.95f;
+			PlayerCharacter.playChar.cash *= bribeLoss;
 			PlayerCharacter.playChar.weedOwned = 0;
 			PlayerCharacter.playChar.shroomOwned = 0;
 			PlayerCharacter.playChar.LSDOwned = 0;
@@ -40,11 +49,15 @@ public class CopsAndRobbers : MonoBehaviour
 	public void Mugged()
 	{
 		muggedChance = Random.Range (muggedChanceMin, muggedChanceMax);
+
+		/* if the player gets mugged, take a percentage of his cash, 
+		 * increase his hours to simulate a knockout */
+
 		if (muggedChance >= 95) 
 		{
 			isMugged = true;
 			Debug.Log ("Your Mugged");
-			PlayerCharacter.playChar.cash *= 0.5f;
+			PlayerCharacter.playChar.cash *= muggedLoss;
 			PlayerCharacter.playChar.health -= 10;
 			MuggedDisp.SetActive (true);
 			PlayerCharacter.playChar.hours += 6;

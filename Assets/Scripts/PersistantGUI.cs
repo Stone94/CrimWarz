@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PersistantGUI : MonoBehaviour {
 
@@ -12,18 +13,20 @@ public class PersistantGUI : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		UpdateUI ();
 	}
 
+	// update the players UI each frame
 	public void UpdateUI ()
 	{
 		playerHealthDisp.text = "Health: " + PlayerCharacter.playChar.health;
 		playerRepDisp.text = "Rep: " + PlayerCharacter.playChar.rep;
 		dateDisp.text = "Days: " + PlayerCharacter.playChar.days;
 		timeDisp.text = "Time: " + PlayerCharacter.playChar.hours;
-		moneyDisp.text = "Cash: $" + Mathf.Round (PlayerCharacter.playChar.cash);
-		debtDisp.text = "Debt: $" + Mathf.Round (PlayerCharacter.playChar.debtLeft);
-		cryptoDisp.text = "Crypto: $" + Mathf.Round (PlayerCharacter.playChar.cryptoC);
+		moneyDisp.text = "Cash: $" + PlayerCharacter.playChar.cash;
+		debtDisp.text = "Debt: $" + PlayerCharacter.playChar.debtLeft;
+		cryptoDisp.text = "Crypto: $" + PlayerCharacter.playChar.cryptoC;
 	}
 }

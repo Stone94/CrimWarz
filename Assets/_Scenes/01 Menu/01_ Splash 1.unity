@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36f63937008510429850b9027af09ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2
+  delay: 0.5
   scene: 01_ Splash 2
 --- !u!4 &165436301
 Transform:
@@ -618,6 +618,16 @@ Prefab:
     - target: {fileID: 4288139269771592, guid: 3fca240e993a58743a5284e0ab6afa6c, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c,
+        type: 2}
+      propertyPath: debtLeft
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320836918392880, guid: 3fca240e993a58743a5284e0ab6afa6c,
+        type: 2}
+      propertyPath: bankInterestRate
+      value: 1.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fca240e993a58743a5284e0ab6afa6c, type: 2}

@@ -10,7 +10,7 @@ public class GamePause : MonoBehaviour
 
 	void Start()
 	{
-		Paused = false;
+		Paused = false; // Is the game paused?
 	}
 
 	void Update()
@@ -18,6 +18,7 @@ public class GamePause : MonoBehaviour
 		PauseInputController ();
 	}
 
+	// Button to pause the game.
 	void PauseInputController ()
 	{
 		if (Input.GetKeyDown (KeyCode.Tab) || Input.GetKeyDown (KeyCode.Escape)) {

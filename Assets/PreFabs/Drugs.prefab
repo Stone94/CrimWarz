@@ -38,9 +38,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e467fb08b889748a97314ddae059e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BMD: {fileID: 114206703810613420, guid: 2b8c96e38595a7d48b2adc8ce9129b1d, type: 2}
+  BMD: {fileID: 0}
   amountSlider: {fileID: 0}
   amountSliderText: {fileID: 0}
+  ludeMin: 10
+  ludeMax: 50
+  weedMin: 100
+  weedMax: 200
+  shroomMin: 200
+  shroomMax: 300
+  lsdMin: 300
+  lsdMax: 500
+  speedMin: 500
+  speedMax: 1000
+  methMin: 1500
+  methMax: 2500
+  cokeMin: 8000
+  cokeMax: 16000
+  heroinMin: 9000
+  heroinMax: 20000
 --- !u!224 &224963939934568164
 RectTransform:
   m_ObjectHideFlags: 1

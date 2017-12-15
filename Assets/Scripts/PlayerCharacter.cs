@@ -8,30 +8,33 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour 
 {
-	public static PlayerCharacter playChar;
+	public static PlayerCharacter playChar; // Using Static References to decrease the amount of gameobjects i constantly need to link togethor.
 
-	public float health;
-	public float cash;
-	public float cryptoC;
-	public float debtLeft;
-	public float ludesOwned;
-	public float weedOwned;
-	public float shroomOwned;
-	public float LSDOwned;
-	public float speedOwned;
-	public float methOwned;
-	public float cokeOwned;
-	public float heroinOwned;
+	public float health; 
+	public double cash;
+	public double cryptoC; // Feature yet to be implemented
+	public double debtLeft; // The amount of debt the player has left
+	public double ludesOwned;
+	public double weedOwned;
+	public double shroomOwned;
+	public double LSDOwned;
+	public double speedOwned;
+	public double methOwned;
+	public double cokeOwned;
+	public double heroinOwned;
 	public int hours;
 	public int days;
-	public int rep;
-	public float bankBalance;
+	public double rep;
+	public double bankBalance;
+
+	public double debtInterestRate; // This is here to serve as a global access for the same reason as using a static reference, less gameobjects linked togethor = happy me!
 
 	void Awake () 
 	{
 		dontDestroyPlayerOnLoad ();
 	}
 
+	// if the player character exists, make it persist during scene changes, and destroy any duplicates keeping only the original.
 	void dontDestroyPlayerOnLoad ()
 	{
 		if (playChar == null) {
@@ -44,8 +47,21 @@ public class PlayerCharacter : MonoBehaviour
 			}
 	}
 		
+	void playerCaps ()
+	{
+		if (playChar.cash > 9999999999999999)
+		{
+			playChar.cash = 9999999999999999;
+		}
 
-	// write game data to a file
+		if (playChar.bankBalance > 9999999999999999)
+		{
+			playChar.bankBalance = 9999999999999999;
+		}
+	}
+
+
+	// write game data to a file; using the playChar. prefix ensures the saving of the current running game character and not the prefab.
 	public void Save()
 	{
 		GameObject.FindObjectOfType<PlayerCharacter>();
@@ -78,7 +94,7 @@ public class PlayerCharacter : MonoBehaviour
 		Debug.Log (data.cash.ToString());
 	}
 
-	// read game data from a file
+	// read game data from a file; using the playChar. prefix ensures the loading of the previous running game character and not the prefab.
 	public void Load()
 	{
 		if (File.Exists (Application.persistentDataPath + "/Saves/playerInfo.dat")) 
@@ -116,19 +132,19 @@ public class PlayerCharacter : MonoBehaviour
 class PlayerDataa
 {
 	public float health;
-	public float bankBalance;
-	public float cash;
-	public float cryptoC;
-	public float debtLeft;
-	public float ludesOwned;
-	public float weedOwned;
-	public float shroomOwned;
-	public float LSDOwned;
-	public float speedOwned;
-	public float methOwned;
-	public float cokeOwned;
-	public float heroinOwned;
+	public double bankBalance;
+	public double cash;
+	public double cryptoC;
+	public double debtLeft;
+	public double ludesOwned;
+	public double weedOwned;
+	public double shroomOwned;
+	public double LSDOwned;
+	public double speedOwned;
+	public double methOwned;
+	public double cokeOwned;
+	public double heroinOwned;
 	public int hours;
 	public int days;
-	public int rep;
+	public double rep;
 }

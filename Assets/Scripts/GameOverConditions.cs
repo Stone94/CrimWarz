@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverConditions : MonoBehaviour {
+public class GameOverConditions : MonoBehaviour 
+{
 
 	// Update is called once per frame
 	void Update () {
@@ -14,7 +15,7 @@ public class GameOverConditions : MonoBehaviour {
 	// sets the debt related lose condition
 	public void gameOverDebt()
 	{
-		if (PlayerCharacter.playChar.debtLeft >= 20000f || PlayerCharacter.playChar.days >= 30 && PlayerCharacter.playChar.debtLeft >= 1f)
+		if (PlayerCharacter.playChar.debtLeft >= 20000 || PlayerCharacter.playChar.days >= 30 && PlayerCharacter.playChar.debtLeft >= 1)
 			SceneManager.LoadScene("01d Lose");
 	}
 

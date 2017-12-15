@@ -12,7 +12,7 @@ public class loanSharkDisp : MonoBehaviour {
 		loanIntro ();
 	}
 
-
+	// change the loan sharks dialogue based on whether or not the player has debt.
 	public void loanIntro ()
 	{
 		if (PlayerCharacter.playChar.debtLeft >= 1){

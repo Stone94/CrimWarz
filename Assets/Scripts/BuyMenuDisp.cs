@@ -41,7 +41,7 @@ public class BuyMenuDisp : MonoBehaviour
 		methOwnedBuyDisp.text = PlayerCharacter.playChar.methOwned.ToString ();
 	
 		cokeCostBuyDisp.text = "$" + Mathf.Round(cokeCost);
-		cokeOwnedBuyDisp.text = PlayerCharacter.playChar.cokeOwned.ToString ();
+			cokeOwnedBuyDisp.text = PlayerCharacter.playChar.cokeOwned.ToString ();
 	
 		heroinCostBuyDisp.text = "$" + Mathf.Round(heroinCost);
 		heroinOwnedBuyDisp.text = PlayerCharacter.playChar.heroinOwned.ToString ();
