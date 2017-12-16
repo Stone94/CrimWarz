@@ -157,7 +157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -496,8 +496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000022846, y: -414.6}
-  m_SizeDelta: {x: 1619, y: 276}
+  m_AnchoredPosition: {x: -69.5, y: -414.59998}
+  m_SizeDelta: {x: 1781.1, y: 276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930858689
 MonoBehaviour:
@@ -628,6 +628,11 @@ Prefab:
         type: 2}
       propertyPath: bankInterestRate
       value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c,
+        type: 2}
+      propertyPath: debtInterestRate
+      value: 1.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fca240e993a58743a5284e0ab6afa6c, type: 2}

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour 
 {
+	//TODO Set a delay on loading level, 
+	//TODO change time upon traveling
 	public void LoadLevelStart(string name)
 	{
 		SceneManager.LoadScene (name);

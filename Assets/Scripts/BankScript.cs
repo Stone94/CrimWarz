@@ -14,6 +14,7 @@ public class BankScript : MonoBehaviour
 	}
 
 	// These will update the values of the bank panel.
+	//TODO Round the values to 2 decimal places
 	void BankUIDisplay ()
 	{
 		// Deposit

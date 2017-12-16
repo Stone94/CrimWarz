@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BuyMenuDisp : MonoBehaviour 
 {
+	//TODO UI FEATURE** Make the buy experience like using a computer
 	public static BuyMenuDisp BMD;
 	public Text ludeCostBuyDisp, ludeOwnedBuyDisp, weedCostBuyDisp, weedOwnedBuyDisp, shroomCostBuyDisp, shroomOwnedBuyDisp, 
 	LSDCostBuyDisp, LSDOwnedBuyDisp, speedCostBuyDisp, speedOwnedBuyDisp, methCostBuyDisp, methOwnedBuyDisp, cokeCostBuyDisp,
@@ -19,7 +20,8 @@ public class BuyMenuDisp : MonoBehaviour
 		setUITextValues ();
 	}
 
-	// set the values of the text objects
+	// set the values of the text objects 
+	//TODO Round the values to 2 decimal places
 	public void setUITextValues()
 	{
 		ludeCostBuyDisp.text = "$" + Mathf.Round(ludesCost);

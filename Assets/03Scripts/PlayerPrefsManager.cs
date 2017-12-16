@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPrefsManager : MonoBehaviour 
 {
+	//TODO Repurpose this for use in meh game
 	const string MASTER_VOLUME_KEY = "master_volume";
 	const string DIFFICULTY_KEY = "difficulty";
 	const string LEVEL_KEY = "level_unlocked_";

@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour 
 {
+	//TODO Set a limit on how many drugs can be held
+	//TODO Create storage containers to increase max drugs held
+
 	public static PlayerCharacter playChar; // Using Static References to decrease the amount of gameobjects i constantly need to link togethor.
 
 	public float health; 

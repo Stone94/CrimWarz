@@ -19,6 +19,7 @@ public class PersistantGUI : MonoBehaviour {
 	}
 
 	// update the players UI each frame
+	//TODO Round the values to 2 decimal places
 	public void UpdateUI ()
 	{
 		playerHealthDisp.text = "Health: " + PlayerCharacter.playChar.health;

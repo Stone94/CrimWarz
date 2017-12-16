@@ -50,7 +50,8 @@ public class Drugs : MonoBehaviour
 		BMD.heroinCost = Random.Range (Mathf.Round(heroinMin), Mathf.Round(heroinMax));
 	}
 
-	// The slider that sets the value of purchase TODO add a +-1 button for fine incrementing
+	// The slider that sets the value of purchase 
+	//TODO add a +-1 buttons for fine incrementing
 	void AmountSlideValue ()
 	{
 		amountSliderText.text = "Amount: " + amountSlider.value.ToString ();
@@ -61,6 +62,8 @@ public class Drugs : MonoBehaviour
 
 
 	// Functions for buying and selling drugs, currently WIP and need to make them more efficient as scale increases.
+	//TODO make this more efficient somehow (LESS functions, MORE reusability)
+	//TODO Set these to OnPointerDown to improve response times on android
 	public void buyLude()
 	{
 		if (PlayerCharacter.playChar.cash >= BMD.ludesCost * amount) 

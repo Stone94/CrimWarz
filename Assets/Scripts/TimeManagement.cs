@@ -5,6 +5,9 @@ using UnityEngine.Apple.ReplayKit;
 
 public class TimeManagement : MonoBehaviour 
 {
+	//TODO make a more realistic date and time based on a calender
+	//TODO Make events that can severely lower or raise product prices
+	//TODO Make this only start when the game has started and player is not in main menu
 	public float timeScaleDelay;
 	public double bankInterestRate;
 
