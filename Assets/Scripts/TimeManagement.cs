@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Apple.ReplayKit;
 
 public class TimeManagement : MonoBehaviour 
 {
@@ -10,6 +9,11 @@ public class TimeManagement : MonoBehaviour
 	//TODO Make this only start when the game has started and player is not in main menu
 	public float timeScaleDelay;
 	public double bankInterestRate;
+
+	void Awake ()
+	{
+		GetComponent <Drugs>();
+	}
 
 	void Start ()
 	{
@@ -29,6 +33,7 @@ public class TimeManagement : MonoBehaviour
 			PlayerCharacter.playChar.debtLeft *= PlayerCharacter.playChar.debtInterestRate ;
 			PlayerCharacter.playChar.bankBalance = (PlayerCharacter.playChar.bankBalance + PlayerCharacter.playChar.rep) * bankInterestRate;
 			PlayerCharacter.playChar.rep += 5;
+			//Drugs.drugs.priceReset ();
 		}
 	}
 

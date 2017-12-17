@@ -5,19 +5,29 @@ using UnityEngine.UI;
 /* TODO Fine the bug thats preventing the amount slider from setting the value. */
 public class Drugs : MonoBehaviour
 {
-
+	public static Drugs drugs;
 	public BuyMenuDisp BMD;
+	public Text eventText;
+	public GameObject eventPanel;
+
 
 	// Purchase Amount Slider
 	public Slider amountSlider;
 	public Text amountSliderText;
 
 	private float amount;
-	public float ludeMin, ludeMax, weedMin, weedMax, shroomMin, shroomMax, lsdMin, lsdMax, speedMin, speedMax, methMin, methMax, cokeMin, cokeMax, heroinMin, heroinMax;
+	public float ludeMin, ludeMax, weedMin, weedMax, shroomMin, shroomMax, lsdMin, lsdMax, 
+	speedMin, speedMax, methMin, methMax, cokeMin, cokeMax, heroinMin, heroinMax;
+
+	public float eventLudeMin, eventLudeMax, eventWeedMin, eventWeedMax, eventShroomMin, eventShroomMax, eventLSDMin, eventLSDMax, 
+	eventSpeedMin, eventSpeedMax, eventMethMin, eventMethMax, eventCokeMin, eventCokeMax, eventHeroinMin, eventHeroinMax, eventLowLudeMin, 
+	eventLowLudeMax, eventLowWeedMin, eventLowWeedMax, eventLowShroomMin, eventLowShroomMax, eventLowLSDMin, eventLowLSDMax, 
+	eventLowSpeedMin, eventLowSpeedMax, eventLowMethMin, eventLowMethMax, eventLowCokeMin, eventLowCokeMax, eventLowHeroinMin, eventLowHeroinMax;
 
 	// Set the product prices upon entering the scene
 	void Awake()
 	{
+		PriceEventHigher ();
 		RandomizeProductPrices ();
 	}
 
@@ -58,6 +68,147 @@ public class Drugs : MonoBehaviour
 		amount = amountSlider.value;
 	}
 
+
+	private int lowerChance, PriceRaiseChance;
+
+	public int lowerChanceMin, lowerChanceMax, higherChanceMax, higherChanceMin;
+	private int eventChance;
+
+	public void PriceEventHigher ()
+	{
+		// set the chance for prices to skyrocket;
+
+		PriceRaiseChance = Random.Range (higherChanceMin, higherChanceMax);
+		lowerChance = Random.Range (lowerChanceMin, lowerChanceMax); 
+		eventChance = Random.Range (higherChanceMin, higherChanceMax);
+
+		if (PriceRaiseChance == eventChance) {
+			eventChance = Random.Range (1, 8);
+
+			if (eventChance == 1) {
+				weedMin = eventWeedMin;
+				weedMax = eventWeedMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and weed prices have sky rocketed!";
+				Debug.Log (PriceRaiseChance);
+			} else if (eventChance == 2) {
+				lsdMin = eventLSDMin;
+				lsdMax = eventLSDMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and LSD prices have sky rocketed!";
+
+			} else if (eventChance == 3) {
+				shroomMin = eventShroomMin;
+				shroomMax = eventShroomMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and shroom prices have sky rocketed!";
+
+			} else if (eventChance == 4) {
+				speedMin = eventSpeedMin;
+				speedMax = eventSpeedMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and speed prices have sky rocketed!";
+
+			} else if (eventChance == 5) {
+				methMin = eventMethMin;
+				methMax = eventMethMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and meth prices have sky rocketed!";
+
+			} else if (eventChance == 6) {
+				heroinMin = eventHeroinMin;
+				heroinMax = eventHeroinMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and heroin prices have sky rocketed!";
+
+			} else if (eventChance == 7) {
+				ludeMin = eventLudeMin;
+				ludeMax = eventLudeMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and lude prices have sky rocketed!";
+
+			} else if (eventChance == 8) {
+				cokeMin = eventCokeMin;
+				cokeMax = eventCokeMax;
+				eventPanel.SetActive (true);
+				eventText.text = "There was a drug raid recently and coke prices have sky rocketed!";
+
+			}
+		}
+
+		if (lowerChance == eventChance) {
+			eventChance = Random.Range (1, 8);
+
+			if (eventChance == 1) {
+				weedMin = eventLowWeedMin;
+				weedMax = eventLowWeedMax;
+				eventPanel.SetActive (true);
+				eventText.text = "Your supplier had a bountiful harvest today, Weed prices have bottomed out!";
+			} else if (eventChance == 2) {
+				lsdMin = eventLowLSDMin;
+				lsdMax = eventLowLSDMax;
+				eventPanel.SetActive (true);
+				eventText.text = "Some hippies released how to make home made LSD prices have tanked!";
+
+			} else if (eventChance == 3) {
+				shroomMin = eventLowShroomMin;
+				shroomMax = eventLowShroomMax;
+				eventPanel.SetActive (true);
+				eventText.text = "A Farmer flooded the market with cheap shrooms, and shroom prices have plummeted!";
+
+			} else if (eventChance == 4) {
+				speedMin = eventLowSpeedMin;
+				speedMax = eventLowSpeedMax;
+				eventPanel.SetActive (true);
+				eventText.text = "A group of dutch bikers came with loads of speed and have never been lower!";
+
+			} else if (eventChance == 5) {
+				methMin = eventLowMethMin;
+				methMax = eventLowMethMax;
+				eventPanel.SetActive (true);
+				eventText.text = "Some guy called Heisenburger started cooking the best meth ever, Market prices have fallen as a result!";
+
+			} else if (eventChance == 6) {
+				heroinMin = eventLowHeroinMin;
+				heroinMax = eventLowHeroinMax;
+				eventPanel.SetActive (true);
+				eventText.text = "The Cartel came in with a freight load of Heroin and prices have sunk!";
+
+			} else if (eventChance == 7) {
+				ludeMin = eventLowLudeMin;
+				ludeMax = eventLowLudeMax;
+				eventPanel.SetActive (true);
+				eventText.text = "Doctors are giving ludes out like its christmas and lude prices are insanely low!";
+
+			} else if (eventChance == 8) {
+				cokeMin = eventLowCokeMin;
+				cokeMax = eventLowCokeMax;
+				eventPanel.SetActive (true);
+				eventText.text = "Tony Banana flooded the market with cheap coke, prices are incredible right now!";
+
+			}
+		}
+	}
+
+	public void priceReset()
+	{
+		ludeMin = ludeMin;
+		ludeMax = ludeMax;
+		weedMin = weedMin;
+		weedMax = weedMax;
+		shroomMin = shroomMin;
+		shroomMax = shroomMax;
+		lsdMin = lsdMin;
+		lsdMax = lsdMax;
+		speedMin = speedMin;
+		speedMax = speedMax;
+		methMin = methMin;
+		methMax = methMax;
+		cokeMin = cokeMin;
+		cokeMax = cokeMax;
+		heroinMin = heroinMin;
+		heroinMax = heroinMax;
+	}
 
 
 

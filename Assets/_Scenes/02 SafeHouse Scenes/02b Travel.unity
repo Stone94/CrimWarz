@@ -516,6 +516,11 @@ Prefab:
       propertyPath: cop
       value: 
       objectReference: {fileID: 8300000, guid: bd808715fc95feb4ab1c605305824d10, type: 3}
+    - target: {fileID: 114749764640034968, guid: 03fc642e7d8d70741bcc118398bd4f96,
+        type: 2}
+      propertyPath: bribeLoss
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03fc642e7d8d70741bcc118398bd4f96, type: 2}
   m_IsPrefabParent: 0
@@ -1026,6 +1031,8 @@ MonoBehaviour:
   robber: {fileID: 0}
   BustedDisp: {fileID: 0}
   MuggedDisp: {fileID: 0}
+  bribeLoss: 0
+  muggedLoss: 0
   isBusted: 0
   isMugged: 0
   muggedChanceMin: 0

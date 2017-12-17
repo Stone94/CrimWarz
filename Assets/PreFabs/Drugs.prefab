@@ -39,6 +39,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BMD: {fileID: 0}
+  eventText: {fileID: 0}
+  eventPanel: {fileID: 0}
   amountSlider: {fileID: 0}
   amountSliderText: {fileID: 0}
   ludeMin: 10
@@ -57,6 +59,42 @@ MonoBehaviour:
   cokeMax: 16000
   heroinMin: 9000
   heroinMax: 20000
+  eventLudeMin: 50
+  eventLudeMax: 100
+  eventWeedMin: 200
+  eventWeedMax: 300
+  eventShroomMin: 300
+  eventShroomMax: 450
+  eventLSDMin: 500
+  eventLSDMax: 600
+  eventSpeedMin: 1000
+  eventSpeedMax: 2000
+  eventMethMin: 2600
+  eventMethMax: 4500
+  eventCokeMin: 16500
+  eventCokeMax: 33000
+  eventHeroinMin: 27000
+  eventHeroinMax: 35000
+  eventLowLudeMin: 1
+  eventLowLudeMax: 5
+  eventLowWeedMin: 10
+  eventLowWeedMax: 15
+  eventLowShroomMin: 100
+  eventLowShroomMax: 150
+  eventLowLSDMin: 150
+  eventLowLSDMax: 200
+  eventLowSpeedMin: 250
+  eventLowSpeedMax: 350
+  eventLowMethMin: 750
+  eventLowMethMax: 1000
+  eventLowCokeMin: 1500
+  eventLowCokeMax: 4000
+  eventLowHeroinMin: 4500
+  eventLowHeroinMax: 6000
+  lowerChanceMin: 100
+  lowerChanceMax: 1
+  higherChanceMax: 100
+  higherChanceMin: 1
 --- !u!224 &224963939934568164
 RectTransform:
   m_ObjectHideFlags: 1

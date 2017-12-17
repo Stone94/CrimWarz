@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36f63937008510429850b9027af09ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 3
   scene: 01a Start Menu
 --- !u!4 &2039062977
 Transform:

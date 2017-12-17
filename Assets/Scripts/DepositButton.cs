@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DepositButton : MonoBehaviour 
 {
-	// TODO Deposit is not currently working find out why :/
 	public double transferAmount;
 	public double bankDepositFee;
 
@@ -13,7 +12,7 @@ public class DepositButton : MonoBehaviour
 		// if the amount of cash the player is holding is greater then or equal to the amount he wants to transfer, deposit cash to bank.
 		if ( transferAmount <= PlayerCharacter.playChar.cash) {
 			PlayerCharacter.playChar.cash -= transferAmount;
-			PlayerCharacter.playChar.bankBalance += (transferAmount * bankDepositFee);
+			PlayerCharacter.playChar.bankBalance += transferAmount * bankDepositFee;
 		}
 	}
 
