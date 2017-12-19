@@ -26,8 +26,8 @@ public class PersistantGUI : MonoBehaviour {
 		playerRepDisp.text = "Rep: " + PlayerCharacter.playChar.rep;
 		dateDisp.text = "Days: " + PlayerCharacter.playChar.days;
 		timeDisp.text = "Time: " + PlayerCharacter.playChar.hours;
-		moneyDisp.text = "Cash: $" + PlayerCharacter.playChar.cash;
-		debtDisp.text = "Debt: $" + PlayerCharacter.playChar.debtLeft;
+		moneyDisp.text = "Cash: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.cash);
+		debtDisp.text = "Debt: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.debtLeft);
 		cryptoDisp.text = "Crypto: $" + PlayerCharacter.playChar.cryptoC;
 	}
 }

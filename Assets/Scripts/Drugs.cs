@@ -36,7 +36,6 @@ public class Drugs : MonoBehaviour
 	{
 		AmountSlideValue ();
 		updatePrices ();
-
 	}
 
 	void updatePrices ()
@@ -67,7 +66,14 @@ public class Drugs : MonoBehaviour
 		amountSliderText.text = "Amount: " + amountSlider.value.ToString ();
 		amount = amountSlider.value;
 	}
-
+	public void AmountSlideValuePlusOne ()
+	{
+		amountSlider.value +=1;
+	}
+	public void AmountSlideValueMinusOne ()
+	{
+		amountSlider.value-=1;
+	}
 
 	private int lowerChance, PriceRaiseChance;
 
@@ -189,28 +195,6 @@ public class Drugs : MonoBehaviour
 			}
 		}
 	}
-
-	public void priceReset()
-	{
-		ludeMin = ludeMin;
-		ludeMax = ludeMax;
-		weedMin = weedMin;
-		weedMax = weedMax;
-		shroomMin = shroomMin;
-		shroomMax = shroomMax;
-		lsdMin = lsdMin;
-		lsdMax = lsdMax;
-		speedMin = speedMin;
-		speedMax = speedMax;
-		methMin = methMin;
-		methMax = methMax;
-		cokeMin = cokeMin;
-		cokeMax = cokeMax;
-		heroinMin = heroinMin;
-		heroinMax = heroinMax;
-	}
-
-
 
 	// Functions for buying and selling drugs, currently WIP and need to make them more efficient as scale increases.
 	//TODO make this more efficient somehow (LESS functions, MORE reusability)

@@ -18,11 +18,11 @@ public class BankScript : MonoBehaviour
 	void BankUIDisplay ()
 	{
 		// Deposit
-		bankAccountD.text = "Account Balance: $" + PlayerCharacter.playChar.bankBalance.ToString ();
-		bankCashDispD.text = "Cash: $" + PlayerCharacter.playChar.cash.ToString ();
+		bankAccountD.text = "Account Balance: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.bankBalance);
+			bankCashDispD.text = "Cash: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.cash);
 
 		// Withdrawal
-		bankAccountW.text = "Account Balance: $" + PlayerCharacter.playChar.bankBalance.ToString ();
-		bankCashDispW.text = "Cash: $" + PlayerCharacter.playChar.cash.ToString ();
+		bankAccountW.text = "Account Balance: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.bankBalance);
+			bankCashDispW.text = "Cash: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.cash);
 	}
 }

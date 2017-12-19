@@ -40,3 +40,5 @@ Library/
 \.hg/
 
 obj/
+
+Temp/

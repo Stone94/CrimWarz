@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeManagement : MonoBehaviour 
 {
@@ -24,16 +25,17 @@ public class TimeManagement : MonoBehaviour
 	// creates the timer, this will increment the hours by 1 and will increase debt, bank cash, and rep each day or every 24 ingame hours.
 	private void timeAdd()
 	{
-		PlayerCharacter.playChar.hours += 1;
+		if (SceneManager.GetActiveScene ().buildIndex!=0 && SceneManager.GetActiveScene ().buildIndex !=1 && SceneManager.GetActiveScene ().buildIndex !=2) {
+			
+			PlayerCharacter.playChar.hours += 1;
 
-		if (PlayerCharacter.playChar.hours >= 24) 
-		{
-			PlayerCharacter.playChar.days += 1;
-			PlayerCharacter.playChar.hours = 0;
-			PlayerCharacter.playChar.debtLeft *= PlayerCharacter.playChar.debtInterestRate ;
-			PlayerCharacter.playChar.bankBalance = (PlayerCharacter.playChar.bankBalance + PlayerCharacter.playChar.rep) * bankInterestRate;
-			PlayerCharacter.playChar.rep += 5;
-			//Drugs.drugs.priceReset ();
+			if (PlayerCharacter.playChar.hours >= 24) {
+				PlayerCharacter.playChar.days += 1;
+				PlayerCharacter.playChar.hours = 0;
+				PlayerCharacter.playChar.debtLeft *= PlayerCharacter.playChar.debtInterestRate;
+				PlayerCharacter.playChar.bankBalance = (PlayerCharacter.playChar.bankBalance + PlayerCharacter.playChar.rep) * bankInterestRate;
+				PlayerCharacter.playChar.rep += 5;
+			}
 		}
 	}
 

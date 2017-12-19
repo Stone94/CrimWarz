@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b4ee463f6846e4e8734d3592979730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScaleDelay: 1
+  timeScaleDelay: 3
   bankInterestRate: 1.15
 --- !u!114 &114477184953499544
 MonoBehaviour:
