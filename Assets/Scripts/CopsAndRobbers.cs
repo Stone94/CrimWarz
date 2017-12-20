@@ -11,7 +11,7 @@ public class CopsAndRobbers : MonoBehaviour
 	public AudioClip robber;
 	public GameObject BustedDisp, MuggedDisp;
 
-	public float bribeLoss, muggedLoss;
+	public float bribeLoss, muggedLoss, eventChance;
 
 	public bool isBusted = false, isMugged = false;
 
@@ -24,12 +24,12 @@ public class CopsAndRobbers : MonoBehaviour
 		// set the chance to get busted between a certain value;
 
 		bustedChance = Random.Range (bustedChanceMin, bustedChanceMax);
-
+		eventChance = Random.Range (1, 100);
 		/* if the player gets busted, take a percentage of his cash, 
 		 * all his drugs and increase his hours to simulate an arrest */
 
 		//TODO drugs are not being effected by getting busted for some reason
-		if (bustedChance >= 90)
+		if (bustedChance == eventChance)
 		{
 			isBusted = true;
 			Debug.Log ("Your Busted");
@@ -51,11 +51,12 @@ public class CopsAndRobbers : MonoBehaviour
 	public void Mugged()
 	{
 		muggedChance = Random.Range (muggedChanceMin, muggedChanceMax);
+		eventChance = Random.Range (1, 100);
 
 		/* if the player gets mugged, take a percentage of his cash, 
 		 * increase his hours to simulate a knockout */
 
-		if (muggedChance >= 95) 
+		if (muggedChance == eventChance) 
 		{
 			isMugged = true;
 			Debug.Log ("Your Mugged");

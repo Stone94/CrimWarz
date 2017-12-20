@@ -40,7 +40,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BMD: {fileID: 0}
   eventText: {fileID: 0}
-  eventPanel: {fileID: 0}
   amountSlider: {fileID: 0}
   amountSliderText: {fileID: 0}
   ludeMin: 10

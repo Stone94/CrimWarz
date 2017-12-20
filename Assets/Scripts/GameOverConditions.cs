@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOverConditions : MonoBehaviour 
 {
+	public float maxDebt;
+	public float maxDays;
+	public float minDebt;
 	//TODO make the hospital feature to restore health to prevent inevitable death.
 	// Update is called once per frame
 	void Update () {
@@ -16,7 +19,7 @@ public class GameOverConditions : MonoBehaviour
 	// TODO make the max debt and max days a public variable so we can change it from the editor for balance changes
 	public void gameOverDebt()
 	{
-		if (PlayerCharacter.playChar.debtLeft >= 20000 || PlayerCharacter.playChar.days >= 30 && PlayerCharacter.playChar.debtLeft >= 1)
+		if (PlayerCharacter.playChar.debtLeft >= maxDebt || PlayerCharacter.playChar.days >= maxDays && PlayerCharacter.playChar.debtLeft >= minDebt)
 			SceneManager.LoadScene("01d Lose");
 	}
 
