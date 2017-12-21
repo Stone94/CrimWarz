@@ -19,6 +19,12 @@ public class CopsAndRobbers : MonoBehaviour
 	private int muggedChance, bustedChance;
 	public int muggedChanceMin, muggedChanceMax, bustedChanceMax, bustedChanceMin;
 
+	void Start ()
+	{
+		Busted ();
+		Mugged ();
+	}
+
 	public void Busted ()
 	{
 		// set the chance to get busted between a certain value;

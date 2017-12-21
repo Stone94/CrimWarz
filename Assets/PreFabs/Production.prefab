@@ -9,51 +9,60 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1151049549017452}
+  m_RootGameObject: {fileID: 1410675962533940}
   m_IsPrefabParent: 1
---- !u!1 &1151049549017452
+--- !u!1 &1410675962533940
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224092881019676140}
-  - component: {fileID: 114977424178148526}
+  - component: {fileID: 224712114866908674}
+  - component: {fileID: 114169803814153738}
   m_Layer: 5
-  m_Name: LevelManager
+  m_Name: Production
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114977424178148526
+--- !u!114 &114169803814153738
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151049549017452}
+  m_GameObject: {fileID: 1410675962533940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c130da655f6eb547bb0b586208694c0, type: 3}
+  m_Script: {fileID: 11500000, guid: ce224f12f227d204db39eec680dabff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taxiFare: 50
---- !u!224 &224092881019676140
+  potFarmDisp: {fileID: 0}
+  shroomFarmProduceDisp: {fileID: 0}
+  hippieVanDisp: {fileID: 0}
+  methLabDisp: {fileID: 0}
+  pharmacyDisp: {fileID: 0}
+  potFarmCost: 30000
+  shroomFarmCost: 50000
+  hippieVanCost: 60000
+  methLabCost: 100000
+  pharmacyCost: 10000
+--- !u!224 &224712114866908674
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151049549017452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1410675962533940}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.32604167, y: 0.32604167, z: 0.32604167}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1116.6277, y: 700.4972}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

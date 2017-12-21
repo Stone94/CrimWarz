@@ -35,7 +35,7 @@ public class Drugs : MonoBehaviour
 	{
 		AmountSlideValue ();
 		updatePrices ();
-		PayBills ();
+//		PayBills ();
 	}
 
 	void updatePrices ()

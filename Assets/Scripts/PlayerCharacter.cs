@@ -29,7 +29,7 @@ public class PlayerCharacter : MonoBehaviour
 	public int days;
 	public double rep;
 	public double bankBalance;
-	public int potFarmOwned, shroomFarmOwned;
+	public int potFarmOwned, shroomFarmOwned, hippieVanOwned, methLabOwned, pharmacyOwned;  // Variables for the Production Facilities
 
 
 
@@ -96,6 +96,13 @@ public class PlayerCharacter : MonoBehaviour
 		data.hours = playChar.hours;
 		data.days = playChar.days;
 		data.rep = playChar.rep;
+		data.methLabOwned = playChar.methLabOwned;
+		data.hippieVanOwned = playChar.hippieVanOwned;
+		data.potFarmOwned = playChar.potFarmOwned;
+		data.pharmacyOwned = playChar.pharmacyOwned;
+		data.shroomFarmOwned = playChar.shroomFarmOwned;
+
+
 		Debug.Log ("Saving to: " + Application.persistentDataPath);
 		bf.Serialize (file, data);
 		file.Close ();
@@ -130,6 +137,12 @@ public class PlayerCharacter : MonoBehaviour
 			playChar.hours = data.hours;
 			playChar.days = data.days;
 			playChar.rep = data.rep;
+			playChar.methLabOwned = data.methLabOwned;
+			playChar.hippieVanOwned = data.hippieVanOwned;
+			playChar.potFarmOwned = data.potFarmOwned;
+			playChar.pharmacyOwned = data.pharmacyOwned;
+			playChar.shroomFarmOwned = data.shroomFarmOwned;
+
 			Debug.Log (playChar.cash.ToString());
 
 			Debug.Log (data.cash.ToString());
@@ -157,4 +170,5 @@ class PlayerDataa
 	public int hours;
 	public int days;
 	public double rep;
+	public int potFarmOwned, shroomFarmOwned, hippieVanOwned, methLabOwned, pharmacyOwned; 
 }

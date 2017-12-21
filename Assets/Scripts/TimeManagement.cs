@@ -46,14 +46,17 @@ public class TimeManagement : MonoBehaviour
 			{
 				ProduceWeed ();	
 				ProduceShrooms ();
+				ProduceLSD ();
+				ProduceLudes ();
+				ProduceMeth ();
 			}
 		}
 	}
-
+	// TODO make values editor friendly
 	static void ProduceWeed ()
 	{
 		if (PlayerCharacter.playChar.potFarmOwned > 0) {
-			PlayerCharacter.playChar.weedOwned += 10 * PlayerCharacter.playChar.potFarmOwned * 7;
+			PlayerCharacter.playChar.weedOwned += 10 * PlayerCharacter.playChar.potFarmOwned * 10;
 		}
 	}
 
@@ -61,7 +64,28 @@ public class TimeManagement : MonoBehaviour
 	{
 		//TODO Do a balance pass at some point
 		if (PlayerCharacter.playChar.shroomFarmOwned > 0) {
-			PlayerCharacter.playChar.shroomOwned += 10 * PlayerCharacter.playChar.shroomFarmOwned * 7;
+			PlayerCharacter.playChar.shroomOwned += 10 * PlayerCharacter.playChar.shroomFarmOwned * 10;
+		}
+	}
+
+	static void ProduceLSD ()
+	{
+		if (PlayerCharacter.playChar.hippieVanOwned > 0) {
+			PlayerCharacter.playChar.LSDOwned += 10 * PlayerCharacter.playChar.hippieVanOwned * 10;
+		}
+	}
+
+	static void ProduceMeth ()
+	{
+		if (PlayerCharacter.playChar.methLabOwned > 0) {
+			PlayerCharacter.playChar.methOwned += 10 * PlayerCharacter.playChar.methLabOwned * 10;
+		}
+	}
+
+	static void ProduceLudes ()
+	{
+		if (PlayerCharacter.playChar.pharmacyOwned > 0) {
+			PlayerCharacter.playChar.ludesOwned += 10 * PlayerCharacter.playChar.pharmacyOwned * 10;
 		}
 	}
 

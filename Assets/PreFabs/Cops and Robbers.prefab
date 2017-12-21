@@ -44,6 +44,7 @@ MonoBehaviour:
   MuggedDisp: {fileID: 0}
   bribeLoss: 0.2
   muggedLoss: 0.45
+  eventChance: 0
   isBusted: 0
   isMugged: 0
   muggedChanceMin: 1

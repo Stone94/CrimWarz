@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScaleDelay: 2
-  bankInterestRate: 1.14
+  bankInterestRate: 1.2
 --- !u!114 &114477184953499544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,9 +94,14 @@ MonoBehaviour:
   cokeOwned: 0
   heroinOwned: 0
   hours: 0
-  days: 0
+  days: 1
   rep: 0
   bankBalance: 0
+  potFarmOwned: 0
+  shroomFarmOwned: 0
+  hippieVanOwned: 0
+  methLabOwned: 0
+  pharmacyOwned: 0
   debtInterestRate: 1.15
 --- !u!114 &114923902323658946
 MonoBehaviour:
