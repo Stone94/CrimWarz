@@ -54,6 +54,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13104a42eb5843d4da423152a93626f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDebt: 30000
+  maxDays: 30
+  minDebt: 1
 --- !u!114 &114320836918392880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b4ee463f6846e4e8734d3592979730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScaleDelay: 3
-  bankInterestRate: 1.15
+  timeScaleDelay: 2
+  bankInterestRate: 1.14
 --- !u!114 &114477184953499544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +97,7 @@ MonoBehaviour:
   days: 0
   rep: 0
   bankBalance: 0
-  debtInterestRate: 1.25
+  debtInterestRate: 1.15
 --- !u!114 &114923902323658946
 MonoBehaviour:
   m_ObjectHideFlags: 1

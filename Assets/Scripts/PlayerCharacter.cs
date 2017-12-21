@@ -29,6 +29,13 @@ public class PlayerCharacter : MonoBehaviour
 	public int days;
 	public double rep;
 	public double bankBalance;
+	public int potFarmOwned, shroomFarmOwned;
+
+
+
+
+
+
 
 	public double debtInterestRate; // This is here to serve as a global access for the same reason as using a static reference, less gameobjects linked togethor = happy me!
 

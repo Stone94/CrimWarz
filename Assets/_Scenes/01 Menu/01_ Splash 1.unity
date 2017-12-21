@@ -619,21 +619,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c,
-        type: 2}
-      propertyPath: debtLeft
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114320836918392880, guid: 3fca240e993a58743a5284e0ab6afa6c,
-        type: 2}
-      propertyPath: bankInterestRate
-      value: 1.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 114477184953499544, guid: 3fca240e993a58743a5284e0ab6afa6c,
-        type: 2}
-      propertyPath: debtInterestRate
-      value: 1.15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fca240e993a58743a5284e0ab6afa6c, type: 2}
   m_IsPrefabParent: 0

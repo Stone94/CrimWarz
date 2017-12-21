@@ -35,6 +35,7 @@ public class Drugs : MonoBehaviour
 	{
 		AmountSlideValue ();
 		updatePrices ();
+		PayBills ();
 	}
 
 	void updatePrices ()
@@ -73,6 +74,18 @@ public class Drugs : MonoBehaviour
 	{
 		amountSlider.value-=1;
 	}
+
+	/* THIS IS YET TO BE IMPLEMENTED
+	void PayBills ()
+	{
+		if (PlayerCharacter.playChar.days % 14 == 0) {
+			if (PlayerCharacter.playChar.hours == 12) {
+				PlayerCharacter.playChar.cash -= 1000;
+				eventText.text = "You had to pay your bills, $1000 has been removed from your wallet";
+			}
+		}
+	}
+*/
 
 	private int lowerChance, PriceRaiseChance;
 

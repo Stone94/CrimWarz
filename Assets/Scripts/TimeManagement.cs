@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class TimeManagement : MonoBehaviour 
 {
@@ -35,7 +36,32 @@ public class TimeManagement : MonoBehaviour
 				PlayerCharacter.playChar.debtLeft *= PlayerCharacter.playChar.debtInterestRate;
 				PlayerCharacter.playChar.bankBalance = (PlayerCharacter.playChar.bankBalance + PlayerCharacter.playChar.rep) * bankInterestRate;
 				PlayerCharacter.playChar.rep += 5;
+
 			}
+		}
+		//TODO VV Refactor this into the Production Script VV 
+		if (PlayerCharacter.playChar.days % 7 == 0)
+		{
+			if (PlayerCharacter.playChar.hours == 6)
+			{
+				ProduceWeed ();	
+				ProduceShrooms ();
+			}
+		}
+	}
+
+	static void ProduceWeed ()
+	{
+		if (PlayerCharacter.playChar.potFarmOwned > 0) {
+			PlayerCharacter.playChar.weedOwned += 10 * PlayerCharacter.playChar.potFarmOwned * 7;
+		}
+	}
+
+	static void ProduceShrooms ()
+	{
+		//TODO Do a balance pass at some point
+		if (PlayerCharacter.playChar.shroomFarmOwned > 0) {
+			PlayerCharacter.playChar.shroomOwned += 10 * PlayerCharacter.playChar.shroomFarmOwned * 7;
 		}
 	}
 
