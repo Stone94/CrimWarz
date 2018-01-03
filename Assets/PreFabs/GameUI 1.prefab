@@ -42,9 +42,11 @@ MonoBehaviour:
   timeDisp: {fileID: 0}
   moneyDisp: {fileID: 0}
   debtDisp: {fileID: 0}
-  cryptoDisp: {fileID: 0}
+  playerFuelDisp: {fileID: 0}
   playerHealthDisp: {fileID: 0}
   playerRepDisp: {fileID: 0}
+  DrugsOwnedDisp: {fileID: 0}
+  playerBankDisp: {fileID: 0}
 --- !u!224 &224890926956911500
 RectTransform:
   m_ObjectHideFlags: 1

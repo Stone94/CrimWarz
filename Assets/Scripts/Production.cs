@@ -9,7 +9,7 @@ public class Production : MonoBehaviour {
 
 	public Text potFarmDisp, shroomFarmProduceDisp, hippieVanDisp, methLabDisp, pharmacyDisp;
 
-	public double potFarmCost, shroomFarmCost, hippieVanCost, methLabCost, pharmacyCost;
+	public float potFarmCost, shroomFarmCost, hippieVanCost, methLabCost, pharmacyCost;
 
 	void Update()
 	{
@@ -26,6 +26,7 @@ public class Production : MonoBehaviour {
 		{
 			PlayerCharacter.playChar.cash -= potFarmCost;
 			PlayerCharacter.playChar.potFarmOwned++;
+			PlayerCharacter.playChar.drugMax += 100;
 		}
 	}
 	public void BuyShroomFarm()
@@ -34,6 +35,7 @@ public class Production : MonoBehaviour {
 		{
 			PlayerCharacter.playChar.cash -= shroomFarmCost;
 			PlayerCharacter.playChar.shroomFarmOwned++;
+			PlayerCharacter.playChar.drugMax += 100;
 		}
 	}
 	public void BuyHippieVan()
@@ -42,6 +44,7 @@ public class Production : MonoBehaviour {
 		{
 			PlayerCharacter.playChar.cash -= hippieVanCost;
 			PlayerCharacter.playChar.hippieVanOwned++;
+			PlayerCharacter.playChar.drugMax += 100;
 		}
 	}
 	public void BuyMethLab()
@@ -50,6 +53,7 @@ public class Production : MonoBehaviour {
 		{
 			PlayerCharacter.playChar.cash -= methLabCost;
 			PlayerCharacter.playChar.methLabOwned++;
+			PlayerCharacter.playChar.drugMax += 100;
 		}
 	}
 	public void BuyPharmacy()
@@ -58,6 +62,7 @@ public class Production : MonoBehaviour {
 		{
 			PlayerCharacter.playChar.cash -= pharmacyCost;
 			PlayerCharacter.playChar.pharmacyOwned++;
+			PlayerCharacter.playChar.drugMax += 100;
 		}
 	}
 }

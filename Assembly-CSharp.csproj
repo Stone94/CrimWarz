@@ -69,6 +69,28 @@
      <Compile Include="Assets\Scripts\Production.cs" />
      <Compile Include="Assets\Scripts\SplashLoad.cs" />
      <Compile Include="Assets\Scripts\TimeManagement.cs" />
+     <None Include="Assets\Game Icons\Spritesheet\sheet_white2x.xml" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_black1x.xml" />
+     <None Include="Assets\Game Icons\Spritesheet\sheet_black1x.xml" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_white1x.xml" />
+     <None Include="Assets\Bundle\SpaceShooterRedux\license.txt" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_black2x.xml" />
+     <None Include="Assets\spaceArt\readme.txt" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_colored1x.xml" />
+     <None Include="Assets\Digital_SFX_Set\readme.txt" />
+     <None Include="Assets\Bundle\SpaceShooterRedux\Spritesheet\sheet.xml" />
+     <None Include="Assets\Game icons expansion\license.txt" />
+     <None Include="Assets\onscreenControls\license.txt" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_white2x.xml" />
+     <None Include="Assets\Game Icons\Spritesheet\sheet_black2x.xml" />
+     <None Include="Assets\Game icons expansion\Game icons (base)\license.txt" />
+     <None Include="Assets\Game icons expansion\Game icons (base)\Spritesheet\sheet_white1x.xml" />
+     <None Include="Assets\Game Icons\Spritesheet\sheet_white1x.xml" />
+     <None Include="Assets\Game Icons\license.txt" />
+     <None Include="Assets\Game icons expansion\Game icons (base)\Spritesheet\sheet_black1x.xml" />
+     <None Include="Assets\Game icons expansion\Spritesheet\sheet_colored2x.xml" />
+     <None Include="Assets\Game icons expansion\Game icons (base)\Spritesheet\sheet_white2x.xml" />
+     <None Include="Assets\Game icons expansion\Game icons (base)\Spritesheet\sheet_black2x.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

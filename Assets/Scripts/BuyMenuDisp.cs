@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class BuyMenuDisp : MonoBehaviour 
 {
-	//TODO UI FEATURE** Make the buy experience like using a computer
+	
 	public static BuyMenuDisp BMD;
-	public Text ludeCostBuyDisp, ludeOwnedBuyDisp, weedCostBuyDisp, weedOwnedBuyDisp, shroomCostBuyDisp, shroomOwnedBuyDisp, 
-	LSDCostBuyDisp, LSDOwnedBuyDisp, speedCostBuyDisp, speedOwnedBuyDisp, methCostBuyDisp, methOwnedBuyDisp, cokeCostBuyDisp,
-	cokeOwnedBuyDisp, heroinCostBuyDisp,heroinOwnedBuyDisp;
+	public GameObject pocketBuyDisp;
+	public Text ludeDisp, weedDisp, shroomDisp, LSDDisp, speedDisp, methDisp, cokeDisp, heroinDisp;
 
 	public float ludesCost, weedCost, shroomCost, LSDCost, speedCost, methCost, cokeCost, heroinCost;
 
@@ -21,33 +20,33 @@ public class BuyMenuDisp : MonoBehaviour
 	}
 
 	// set the values of the text objects 
-	//TODO Round the values to 2 decimal places
+	
 	public void setUITextValues()
 	{
-		ludeCostBuyDisp.text = "$" + Mathf.Round(ludesCost);
-		ludeOwnedBuyDisp.text = PlayerCharacter.playChar.ludesOwned.ToString ();
+		ludeDisp.text = "$" + Mathf.Round(ludesCost) + "\nIn Cargo Hold: " + PlayerCharacter.playChar.ludesOwned;
 
-		weedCostBuyDisp.text = "$" + Mathf.Round(weedCost);
-		weedOwnedBuyDisp.text = PlayerCharacter.playChar.weedOwned.ToString ();
 
-		shroomCostBuyDisp.text = "$" + Mathf.Round(shroomCost);
-		shroomOwnedBuyDisp.text = PlayerCharacter.playChar.shroomOwned.ToString ();
+		weedDisp.text = "$" + Mathf.Round(weedCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.weedOwned;
+
+
+		shroomDisp.text = "$" + Mathf.Round(shroomCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.shroomOwned;
+
 	
-		LSDCostBuyDisp.text = "$" + Mathf.Round(LSDCost);
-		LSDOwnedBuyDisp.text = PlayerCharacter.playChar.LSDOwned.ToString ();
+		LSDDisp.text = "$" + Mathf.Round(LSDCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.LSDOwned;
+
 	
-		speedCostBuyDisp.text = "$" + Mathf.Round(speedCost);
-		speedOwnedBuyDisp.text = PlayerCharacter.playChar.speedOwned.ToString ();
+		speedDisp.text = "$" + Mathf.Round(speedCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.speedOwned;
+
 	
-		methCostBuyDisp.text = "$" + Mathf.Round(methCost);
-		methOwnedBuyDisp.text = PlayerCharacter.playChar.methOwned.ToString ();
+		methDisp.text = "$" + Mathf.Round(methCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.methOwned;
 	
-		cokeCostBuyDisp.text = "$" + Mathf.Round(cokeCost);
-			cokeOwnedBuyDisp.text = PlayerCharacter.playChar.cokeOwned.ToString ();
 	
-		heroinCostBuyDisp.text = "$" + Mathf.Round(heroinCost);
-		heroinOwnedBuyDisp.text = PlayerCharacter.playChar.heroinOwned.ToString ();
+		cokeDisp.text = "$" + Mathf.Round(cokeCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.cokeOwned;
+	
+	
+		heroinDisp.text = "$" + Mathf.Round(heroinCost)+ "\nIn Cargo Hold: " + PlayerCharacter.playChar.heroinOwned;
+
+
 
 	}
-
 }

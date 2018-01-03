@@ -21,14 +21,13 @@ GameObject:
   - component: {fileID: 224146862424664166}
   - component: {fileID: 222333001876138952}
   - component: {fileID: 114954600849489238}
-  - component: {fileID: 114967903562283530}
   m_Layer: 5
   m_Name: Mugged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1201568577121400
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,12 +321,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 047a846005c28a348a702ca76eb5899c, type: 3}
+    m_Font: {fileID: 12800000, guid: af4070b919cb89041a431026f9eef4ba, type: 3}
     m_FontSize: 87
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 108
+    m_MaxSize: 223
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -409,12 +408,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 84f71d099a04d5044a59045b5cfba654, type: 3}
+    m_Font: {fileID: 12800000, guid: af4070b919cb89041a431026f9eef4ba, type: 3}
     m_FontSize: 43
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 46
+    m_MaxSize: 154
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -455,30 +454,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114967903562283530
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1082259857715524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fd770e71311274ab6b14bc3971224d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cop: {fileID: 0}
-  robber: {fileID: 0}
-  BustedDisp: {fileID: 0}
-  MuggedDisp: {fileID: 0}
-  bribeLoss: 0
-  muggedLoss: 0
-  eventChance: 0
-  isBusted: 0
-  isMugged: 0
-  muggedChanceMin: 0
-  muggedChanceMax: 0
-  bustedChanceMax: 0
-  bustedChanceMin: 0
 --- !u!222 &222010432604867252
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -581,8 +556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38.150024, y: 22}
-  m_SizeDelta: {x: -2860.8, y: -1618.7}
+  m_AnchoredPosition: {x: 37.170013, y: -37.865005}
+  m_SizeDelta: {x: -2858.84, y: -1498.1799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224264144809999636
 RectTransform:
@@ -599,7 +574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: 216.4}
+  m_AnchoredPosition: {x: -7, y: 190}
   m_SizeDelta: {x: 707.4, y: 108.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224390139853581678

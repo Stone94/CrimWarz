@@ -42,14 +42,14 @@ MonoBehaviour:
   robber: {fileID: 8300000, guid: 0d5aeee70778a9c4aac03819529e5f64, type: 3}
   BustedDisp: {fileID: 0}
   MuggedDisp: {fileID: 0}
-  bribeLoss: 0.2
-  muggedLoss: 0.45
+  bribeLoss: 0.95
+  muggedLoss: 0.5
   eventChance: 0
   isBusted: 0
   isMugged: 0
   muggedChanceMin: 1
-  muggedChanceMax: 100
-  bustedChanceMax: 100
+  muggedChanceMax: 30
+  bustedChanceMax: 30
   bustedChanceMin: 1
 --- !u!224 &224087019858102952
 RectTransform:

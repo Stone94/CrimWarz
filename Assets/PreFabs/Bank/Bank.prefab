@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222620607118991094}
   - component: {fileID: 114400202652660466}
   - component: {fileID: 114195491802677612}
+  - component: {fileID: 114315790846956544}
   m_Layer: 5
   m_Name: Bank
   m_TagString: Untagged
@@ -92,6 +93,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114315790846956544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577925749968746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02fb03b138260d4eb569a30351a9255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bankAccountD: {fileID: 0}
+  bankCashDispD: {fileID: 0}
+  bankAccountW: {fileID: 0}
+  bankCashDispW: {fileID: 0}
 --- !u!114 &114400202652660466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +162,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -804.1499, y: 206.40002}
+  m_AnchoredPosition: {x: 349, y: 45}
   m_SizeDelta: {x: 289.3, y: 57.3}
   m_Pivot: {x: 0.5, y: 0.5}

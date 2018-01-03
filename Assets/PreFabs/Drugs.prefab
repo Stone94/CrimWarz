@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224963939934568164}
   - component: {fileID: 114616343043869444}
+  - component: {fileID: 82632464418098274}
   m_Layer: 5
   m_Name: Drugs
   m_TagString: Untagged
@@ -27,6 +28,86 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &82632464418098274
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738295920923326}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114616343043869444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,6 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BMD: {fileID: 0}
   eventText: {fileID: 0}
+  pocketDisp: {fileID: 0}
+  audioSource: {fileID: 82632464418098274}
+  kaChing: {fileID: 8300000, guid: 85bb16da2fc5ead40b99762bc941f322, type: 3}
+  pocketPanel: {fileID: 0}
   amountSlider: {fileID: 0}
   amountSliderText: {fileID: 0}
   ludeMin: 10
@@ -58,18 +143,20 @@ MonoBehaviour:
   cokeMax: 16000
   heroinMin: 9000
   heroinMax: 20000
-  eventLudeMin: 50
-  eventLudeMax: 100
-  eventWeedMin: 200
-  eventWeedMax: 300
-  eventShroomMin: 300
-  eventShroomMax: 450
-  eventLSDMin: 500
-  eventLSDMax: 600
-  eventSpeedMin: 1000
-  eventSpeedMax: 2000
-  eventMethMin: 2600
-  eventMethMax: 4500
+  pocketCost: 0
+  pocketSize: 0
+  eventLudeMin: 80
+  eventLudeMax: 150
+  eventWeedMin: 400
+  eventWeedMax: 500
+  eventShroomMin: 800
+  eventShroomMax: 1500
+  eventLSDMin: 1000
+  eventLSDMax: 2000
+  eventSpeedMin: 1500
+  eventSpeedMax: 2500
+  eventMethMin: 3000
+  eventMethMax: 5000
   eventCokeMin: 16500
   eventCokeMax: 33000
   eventHeroinMin: 27000
@@ -90,9 +177,9 @@ MonoBehaviour:
   eventLowCokeMax: 4000
   eventLowHeroinMin: 4500
   eventLowHeroinMax: 6000
-  lowerChanceMin: 100
-  lowerChanceMax: 1
-  higherChanceMax: 100
+  lowerChanceMin: 1
+  lowerChanceMax: 7
+  higherChanceMax: 8
   higherChanceMin: 1
 --- !u!224 &224963939934568164
 RectTransform:

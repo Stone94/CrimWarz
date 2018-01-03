@@ -8,42 +8,49 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour 
 {
-	//TODO Set a limit on how many drugs can be held
+	
 	//TODO Create storage containers to increase max drugs held
 
 	public static PlayerCharacter playChar; // Using Static References to decrease the amount of gameobjects i constantly need to link togethor.
 
 	public float health; 
-	public double cash;
-	public double cryptoC; // Feature yet to be implemented
-	public double debtLeft; // The amount of debt the player has left
-	public double ludesOwned;
-	public double weedOwned;
-	public double shroomOwned;
-	public double LSDOwned;
-	public double speedOwned;
-	public double methOwned;
-	public double cokeOwned;
-	public double heroinOwned;
+	public float cash;
+	public float debtLeft; // The amount of debt the player has left
+	public float ludesOwned;
+	public float weedOwned;
+	public float shroomOwned;
+	public float LSDOwned;
+	public float speedOwned;
+	public float methOwned;
+	public float cokeOwned;
+	public float heroinOwned;
 	public int hours;
 	public int days;
-	public double rep;
-	public double bankBalance;
+	public float rep;
+	public float bankBalance;
 	public int potFarmOwned, shroomFarmOwned, hippieVanOwned, methLabOwned, pharmacyOwned;  // Variables for the Production Facilities
+	public float drugMax;
+	public float drugsOwned;
+	public float maxFuel;
+	public float currentFuel;
+	public int maxGameDays;
 
 
 
 
 
-
-
-	public double debtInterestRate; // This is here to serve as a global access for the same reason as using a static reference, less gameobjects linked togethor = happy me!
+	public float debtInterestRate; // This is here to serve as a global access for the same reason as using a static reference, less gameobjects linked togethor = happy me!
 
 	void Awake () 
 	{
 		dontDestroyPlayerOnLoad ();
+
 	}
 
+	void Update ()
+	{
+		playerCaps ();
+	}
 	// if the player character exists, make it persist during scene changes, and destroy any duplicates keeping only the original.
 	void dontDestroyPlayerOnLoad ()
 	{
@@ -68,9 +75,10 @@ public class PlayerCharacter : MonoBehaviour
 		{
 			playChar.bankBalance = 9999999999999999;
 		}
+
+		drugsOwned = ludesOwned + shroomOwned + weedOwned + LSDOwned + methOwned + speedOwned + heroinOwned + cokeOwned;
 	}
-
-
+		
 	// write game data to a file; using the playChar. prefix ensures the saving of the current running game character and not the prefab.
 	public void Save()
 	{
@@ -83,7 +91,6 @@ public class PlayerCharacter : MonoBehaviour
 		data.bankBalance = playChar.bankBalance;
 		data.health = playChar.health;
 		data.cash = playChar.cash;
-		data.cryptoC = playChar.cryptoC;
 		data.debtLeft = playChar.debtLeft;
 		data.ludesOwned = playChar.ludesOwned;
 		data.weedOwned = playChar.weedOwned;
@@ -101,7 +108,9 @@ public class PlayerCharacter : MonoBehaviour
 		data.potFarmOwned = playChar.potFarmOwned;
 		data.pharmacyOwned = playChar.pharmacyOwned;
 		data.shroomFarmOwned = playChar.shroomFarmOwned;
-
+		data.drugMax = playChar.drugMax;
+		data.maxFuel = playChar.maxFuel;
+		data.currentFuel = playChar.currentFuel;
 
 		Debug.Log ("Saving to: " + Application.persistentDataPath);
 		bf.Serialize (file, data);
@@ -124,7 +133,6 @@ public class PlayerCharacter : MonoBehaviour
 			playChar.bankBalance = data.bankBalance;
 			playChar.health = data.health;
 			playChar.cash = data.cash;
-			playChar.cryptoC = data.cryptoC;
 			playChar.debtLeft = data.debtLeft;
 			playChar.ludesOwned = data.ludesOwned;
 			playChar.weedOwned = data.weedOwned;
@@ -142,6 +150,9 @@ public class PlayerCharacter : MonoBehaviour
 			playChar.potFarmOwned = data.potFarmOwned;
 			playChar.pharmacyOwned = data.pharmacyOwned;
 			playChar.shroomFarmOwned = data.shroomFarmOwned;
+			playChar.drugMax = data.drugMax;
+			playChar.maxFuel = data.maxFuel;
+			playChar.currentFuel = data.currentFuel;
 
 			Debug.Log (playChar.cash.ToString());
 
@@ -155,20 +166,22 @@ public class PlayerCharacter : MonoBehaviour
 class PlayerDataa
 {
 	public float health;
-	public double bankBalance;
-	public double cash;
-	public double cryptoC;
-	public double debtLeft;
-	public double ludesOwned;
-	public double weedOwned;
-	public double shroomOwned;
-	public double LSDOwned;
-	public double speedOwned;
-	public double methOwned;
-	public double cokeOwned;
-	public double heroinOwned;
+	public float bankBalance;
+	public float cash;
+	public float debtLeft;
+	public float ludesOwned;
+	public float weedOwned;
+	public float shroomOwned;
+	public float LSDOwned;
+	public float speedOwned;
+	public float methOwned;
+	public float cokeOwned;
+	public float heroinOwned;
 	public int hours;
 	public int days;
-	public double rep;
+	public float rep;
 	public int potFarmOwned, shroomFarmOwned, hippieVanOwned, methLabOwned, pharmacyOwned; 
+	public float drugMax;
+	public float maxFuel;
+	public float currentFuel;
 }

@@ -21,38 +21,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/02 SafeHouse Scenes/02a SafeHouse.unity
     guid: 26d28038ed928e44d980e28e4c42da0d
   - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02b Travel.unity
-    guid: 1fa15570dd7f05142b7e55a642004685
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02c Hire Employees.unity
-    guid: f1e3372b892af2c459e1a6829125a7e1
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02d Stock Market.unity
-    guid: cc01d70b47dcfab499a7593f21d31f2b
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02e Rivals.unity
-    guid: 931326ce451280b47ac6b8eba54c57cf
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02f Real Estate.unity
-    guid: 3eecf1c2c0fcfe94886eb9e335629f5f
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02g Research.unity
-    guid: 1c37cd9163f104143aa5f10584c31164
-  - enabled: 1
     path: Assets/_Scenes/02 SafeHouse Scenes/02h Production.unity
     guid: c8b71372435e75d45b3435ebbeea401e
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02i Hospital.unity
-    guid: de22fa00f48740e4199bad206fd09ade
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02j Favors.unity
-    guid: f7c48092c197b2e4d8170883f59702c0
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02k Territory.unity
-    guid: 69ff45fc27ba2ea46a596148b71e4ec9
-  - enabled: 1
-    path: Assets/_Scenes/02 SafeHouse Scenes/02l Black Market.unity
-    guid: 00162e8ee4dfbba408f787b00306436e
   - enabled: 1
     path: Assets/_Scenes/03 Level Scenes/03a Slums.unity
     guid: ba24afc9129c2394cb218e015da9459a

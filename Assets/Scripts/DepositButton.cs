@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DepositButton : MonoBehaviour 
 {
-	public double transferAmount;
-	public double bankDepositFee;
+	public float transferAmount;
+	public float bankDepositFee;
 
 	public void depositCash()
 	{

@@ -5,22 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour 
 {
-	public double taxiFare;
+	public int travelTime;
 
-	//TODO Set a delay on loading level, 
-	//TODO change time upon traveling
+	//TODO Set a delay on loading level, when ready to add animated scenes.
+	
 	public void LoadLevelStart(string name)
 	{
 		SceneManager.LoadScene (name);
 	}
-	//TODO Fix LEVEL "Travel" Buttons to use Level Start
+	
 	public void LoadLevel(string name)
 	{
-		if (PlayerCharacter.playChar.cash >= taxiFare) {
-			PlayerCharacter.playChar.cash -= taxiFare;
-			PlayerCharacter.playChar.hours += 2;
+			PlayerCharacter.playChar.hours += travelTime;
 			SceneManager.LoadScene (name);
-		}
 	}
 
 	public void Quit()

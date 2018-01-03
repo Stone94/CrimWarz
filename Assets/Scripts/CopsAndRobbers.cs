@@ -5,8 +5,7 @@ using UnityEngine;
 public class CopsAndRobbers : MonoBehaviour 
 {
 	//TODO These later need to be switched to a turn based fighting system
-	//TODO Need to set a delay to allow the player to read the event prompts
-	//TODO Add more busted events FBI(Frozen bank etc)
+	
 	public AudioClip cop;
 	public AudioClip robber;
 	public GameObject BustedDisp, MuggedDisp;
@@ -34,12 +33,13 @@ public class CopsAndRobbers : MonoBehaviour
 		/* if the player gets busted, take a percentage of his cash, 
 		 * all his drugs and increase his hours to simulate an arrest */
 
-		//TODO drugs are not being effected by getting busted for some reason
+		
 		if (bustedChance == eventChance)
 		{
 			isBusted = true;
 			Debug.Log ("Your Busted");
 			PlayerCharacter.playChar.cash *= bribeLoss;
+			PlayerCharacter.playChar.ludesOwned = 0;
 			PlayerCharacter.playChar.weedOwned = 0;
 			PlayerCharacter.playChar.shroomOwned = 0;
 			PlayerCharacter.playChar.LSDOwned = 0;

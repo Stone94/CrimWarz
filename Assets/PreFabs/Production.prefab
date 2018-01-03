@@ -43,11 +43,11 @@ MonoBehaviour:
   hippieVanDisp: {fileID: 0}
   methLabDisp: {fileID: 0}
   pharmacyDisp: {fileID: 0}
-  potFarmCost: 30000
-  shroomFarmCost: 50000
-  hippieVanCost: 60000
-  methLabCost: 100000
-  pharmacyCost: 10000
+  potFarmCost: 300000
+  shroomFarmCost: 500000
+  hippieVanCost: 600000
+  methLabCost: 1000000
+  pharmacyCost: 100000
 --- !u!224 &224712114866908674
 RectTransform:
   m_ObjectHideFlags: 1

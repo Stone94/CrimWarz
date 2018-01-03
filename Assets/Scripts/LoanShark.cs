@@ -7,7 +7,7 @@ public class LoanShark : MonoBehaviour{
 
 	public static LoanShark loanShark;
 
-	public double payDebtAmount;
+	public float payDebtAmount;
 
 	// Pay the debt in full if player has enough cash.
 	public void payDebtFull(){
@@ -19,7 +19,7 @@ public class LoanShark : MonoBehaviour{
 
 	// Pay the amount specified.
 	public void payDebt(){
-		if (PlayerCharacter.playChar.cash >= payDebtAmount) {
+		if (PlayerCharacter.playChar.cash >= payDebtAmount && PlayerCharacter.playChar.debtLeft > 0) {
 			PlayerCharacter.playChar.cash -= payDebtAmount;
 			PlayerCharacter.playChar.debtLeft -= payDebtAmount;
 		} 
@@ -27,11 +27,11 @@ public class LoanShark : MonoBehaviour{
 
 	// give the player cash in exchange for more debt with an interest rate 
 
-	public void getLoan(){
-		if (PlayerCharacter.playChar.cash >= payDebtAmount) {
-			PlayerCharacter.playChar.cash += payDebtAmount;
-			PlayerCharacter.playChar.debtLeft += payDebtAmount * PlayerCharacter.playChar.debtInterestRate;
-		} 
-	}
+	public void getLoan()
+	{
+		PlayerCharacter.playChar.cash += payDebtAmount;
+		PlayerCharacter.playChar.debtLeft += payDebtAmount * PlayerCharacter.playChar.debtInterestRate;
+	} 
+
 
 }

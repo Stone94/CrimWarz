@@ -14,7 +14,7 @@ public class loanSharkDisp : MonoBehaviour {
 
 	// change the loan sharks dialogue based on whether or not the player has debt.
 	//TODO add more dialogues based upon whether or not debt was paid
-	//TODO add more dialogues based upon the varying amount of debt owed
+	
 	public void loanIntro ()
 	{
 		if (PlayerCharacter.playChar.debtLeft >= 5000 && PlayerCharacter.playChar.debtLeft < 10000){

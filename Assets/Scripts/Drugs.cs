@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/* TODO Fine the bug thats preventing the amount slider from setting the value. */
+
 public class Drugs : MonoBehaviour
 {
 	public static Drugs drugs;
 	public BuyMenuDisp BMD;
-	public Text eventText;
+	public Text eventText, pocketDisp, ludeAmountText, weedAmountText, shroomAmountText, LSDAmountText, 
+	speedAmountText, methAmountText, cokeAmountText, heroinAmountText;
 
+	public AudioClip kaChing;
+	public GameObject pocketPanel;
 
-	// Purchase Amount Slider
-	public Slider amountSlider;
-	public Text amountSliderText;
+	public Slider ludeSlide, weedSlide, shroomSlide, LSDSlide, speedSlide, methSlide, cokeSlide, heroinSlide;
 
-	private float amount;
+	private float ludeAmount, weedAmount, shroomAmount, LSDAmount, speedAmount, methAmount, cokeAmount, heroinAmount;
 	public float ludeMin, ludeMax, weedMin, weedMax, shroomMin, shroomMax, lsdMin, lsdMax, 
-	speedMin, speedMax, methMin, methMax, cokeMin, cokeMax, heroinMin, heroinMax;
+	speedMin, speedMax, methMin, methMax, cokeMin, cokeMax, heroinMin, heroinMax, pocketCost, pocketSize;
 
 	public float eventLudeMin, eventLudeMax, eventWeedMin, eventWeedMax, eventShroomMin, eventShroomMax, eventLSDMin, eventLSDMax, 
 	eventSpeedMin, eventSpeedMax, eventMethMin, eventMethMax, eventCokeMin, eventCokeMax, eventHeroinMin, eventHeroinMax, eventLowLudeMin, 
@@ -33,9 +34,18 @@ public class Drugs : MonoBehaviour
 	// ensure the products get updated and the slider value changes.
 	void Update()
 	{
-		AmountSlideValue ();
 		updatePrices ();
 //		PayBills ();
+		SliderValue ();
+		weedAmountText.text = weedSlide.value.ToString ();
+		ludeAmountText.text = ludeSlide.value.ToString ();
+		shroomAmountText.text = shroomSlide.value.ToString ();
+		speedAmountText.text = speedSlide.value.ToString ();
+		LSDAmountText.text = LSDSlide.value.ToString ();
+		methAmountText.text = methSlide.value.ToString ();
+		cokeAmountText.text = cokeSlide.value.ToString ();
+		heroinAmountText.text = heroinSlide.value.ToString ();
+
 	}
 
 	void updatePrices ()
@@ -60,20 +70,29 @@ public class Drugs : MonoBehaviour
 	}
 
 	// The slider that sets the value of purchase 
-	//TODO add a +-1 buttons for fine incrementing
-	void AmountSlideValue ()
+	void SliderValue ()
 	{
-		amountSliderText.text = "Amount: " + amountSlider.value.ToString ();
-		amount = amountSlider.value;
+		ludeSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		weedSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		shroomSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		LSDSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		speedSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		methSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		cokeSlide.maxValue = PlayerCharacter.playChar.drugMax;
+		heroinSlide.maxValue = PlayerCharacter.playChar.drugMax;
+
+		ludeAmount = ludeSlide.value;
+		weedAmount = weedSlide.value;
+		shroomAmount = shroomSlide.value;
+		LSDAmount = LSDSlide.value;
+		speedAmount = speedSlide.value;
+		methAmount = methSlide.value;
+		cokeAmount = cokeSlide.value;
+		heroinAmount = heroinSlide.value;
 	}
-	public void AmountSlideValuePlusOne ()
-	{
-		amountSlider.value +=1;
-	}
-	public void AmountSlideValueMinusOne ()
-	{
-		amountSlider.value-=1;
-	}
+
+
+
 
 	/* THIS IS YET TO BE IMPLEMENTED
 	void PayBills ()
@@ -101,7 +120,7 @@ public class Drugs : MonoBehaviour
 		eventChance = Random.Range (higherChanceMin, higherChanceMax);
 
 		if (PriceRaiseChance == eventChance) {
-			eventChance = Random.Range (1, 8);
+			eventChance = Random.Range (1, 20);
 			//TODO Make more flavorful text for these events
 			if (eventChance == 1) {
 				weedMin = eventWeedMin;
@@ -144,11 +163,16 @@ public class Drugs : MonoBehaviour
 				cokeMax = eventCokeMax;
 				eventText.text = "There was a drug raid recently and coke prices have sky rocketed!";
 
+			} else if (eventChance >=9) {
+				pocketCost = Random.Range (50, 100);
+				pocketSize = Random.Range (9, 20);
+				pocketDisp.text = "Would you like to buy " + pocketSize + " more pockets for: $" + (pocketSize * pocketCost);
+				pocketPanel.SetActive (true);
 			}
 		}
 
 		if (lowerChance == eventChance) {
-			eventChance = Random.Range (1, 8);
+			eventChance = Random.Range (1, 9);
 
 			if (eventChance == 1) {
 				weedMin = eventLowWeedMin;
@@ -188,6 +212,12 @@ public class Drugs : MonoBehaviour
 				cokeMin = eventLowCokeMin;
 				cokeMax = eventLowCokeMax;
 				eventText.text = "Tony Banana flooded the market with cheap coke, prices are incredible right now!";
+
+			} else if (eventChance >=9) {
+				pocketCost = Random.Range (50, 100);
+				pocketSize = Random.Range (9, 20);
+				pocketDisp.text = "Would you like to buy " + pocketSize + " more pockets for: $" + (pocketSize * pocketCost);
+				pocketPanel.SetActive (true);
 			}
 		}
 	}
@@ -195,149 +225,185 @@ public class Drugs : MonoBehaviour
 	// Functions for buying and selling drugs, currently WIP and need to make them more efficient as scale increases.
 	//TODO make this more efficient somehow (LESS functions, MORE reusability)
 	//TODO Set these to OnPointerDown to improve response times on android
+
+	public void buyPockets()
+	{
+		if (PlayerCharacter.playChar.cash >= pocketCost * pocketSize) 
+		{
+			PlayerCharacter.playChar.drugMax += pocketSize;
+			PlayerCharacter.playChar.cash -= pocketCost * pocketSize;
+			pocketPanel.SetActive (false);
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
+		} 
+	}
+
 	public void buyLude()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.ludesCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.ludesCost * ludeAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + ludeAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.ludesOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.ludesCost * amount;
+			PlayerCharacter.playChar.ludesOwned += ludeAmount;
+			PlayerCharacter.playChar.cash -= BMD.ludesCost * ludeAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 
 		} 
 	}
 
 	public void sellLude()
 	{
-		if (PlayerCharacter.playChar.ludesOwned >= amount) 
+		if (PlayerCharacter.playChar.ludesOwned >= ludeAmount) 
 		{
-			PlayerCharacter.playChar.ludesOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.ludesCost * amount;
+			PlayerCharacter.playChar.ludesOwned -= ludeAmount;
+			PlayerCharacter.playChar.cash += BMD.ludesCost * ludeAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buyWeed()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.weedCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.weedCost * weedAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + weedAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.weedOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.weedCost * amount;
+			PlayerCharacter.playChar.weedOwned += weedAmount;
+			PlayerCharacter.playChar.cash -= BMD.weedCost * weedAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellWeed()
 	{
-		if (PlayerCharacter.playChar.weedOwned >= amount) 
+		if (PlayerCharacter.playChar.weedOwned >= weedAmount) 
 		{
-			PlayerCharacter.playChar.weedOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.weedCost * amount;
+			PlayerCharacter.playChar.weedOwned -= weedAmount;
+			PlayerCharacter.playChar.cash += BMD.weedCost * weedAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 		
 
 	public void buyShrooms()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.shroomCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.shroomCost * shroomAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + shroomAmount <=PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.shroomOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.shroomCost * amount;
+			PlayerCharacter.playChar.shroomOwned += shroomAmount;
+			PlayerCharacter.playChar.cash -= BMD.shroomCost * shroomAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellShroom()
 	{
-		if (PlayerCharacter.playChar.shroomOwned >= amount) 
+		if (PlayerCharacter.playChar.shroomOwned >= shroomAmount) 
 		{
-			PlayerCharacter.playChar.shroomOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.shroomCost * amount;
+			PlayerCharacter.playChar.shroomOwned -= shroomAmount;
+			PlayerCharacter.playChar.cash += BMD.shroomCost * shroomAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buyLSD()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.LSDCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.LSDCost * LSDAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + LSDAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.LSDOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.LSDCost * amount;
+			PlayerCharacter.playChar.LSDOwned += LSDAmount;
+			PlayerCharacter.playChar.cash -= BMD.LSDCost * LSDAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void sellLSD()
 	{
-		if (PlayerCharacter.playChar.LSDOwned >= amount) 
+		if (PlayerCharacter.playChar.LSDOwned >= LSDAmount) 
 		{
-			PlayerCharacter.playChar.LSDOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.LSDCost * amount;
+			PlayerCharacter.playChar.LSDOwned -= LSDAmount;
+			PlayerCharacter.playChar.cash += BMD.LSDCost * LSDAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buySpeed()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.speedCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.speedCost * speedAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + speedAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.speedOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.speedCost * amount;
+			PlayerCharacter.playChar.speedOwned += speedAmount;
+			PlayerCharacter.playChar.cash -= BMD.speedCost * speedAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellSpeed()
 	{
-		if (PlayerCharacter.playChar.speedOwned >= amount) 
+		if (PlayerCharacter.playChar.speedOwned >= speedAmount) 
 		{
-			PlayerCharacter.playChar.speedOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.speedCost * amount;
+			PlayerCharacter.playChar.speedOwned -= speedAmount;
+			PlayerCharacter.playChar.cash += BMD.speedCost * speedAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buyMeth()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.methCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.methCost * methAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + methAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.methOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.methCost * amount;
+			PlayerCharacter.playChar.methOwned += methAmount;
+			PlayerCharacter.playChar.cash -= BMD.methCost * methAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellMeth()
 	{
-		if (PlayerCharacter.playChar.methOwned >= amount) 
+		if (PlayerCharacter.playChar.methOwned >= methAmount) 
 		{
-			PlayerCharacter.playChar.methOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.methCost * amount;
+			PlayerCharacter.playChar.methOwned -= methAmount;
+			PlayerCharacter.playChar.cash += BMD.methCost * methAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buyCoke()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.cokeCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.cokeCost * cokeAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + cokeAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.cokeOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.cokeCost * amount;
+			PlayerCharacter.playChar.cokeOwned += cokeAmount;
+			PlayerCharacter.playChar.cash -= BMD.cokeCost * cokeAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellCoke()
 	{
-		if (PlayerCharacter.playChar.cokeOwned >= amount) 
+		if (PlayerCharacter.playChar.cokeOwned >= cokeAmount) 
 		{
-			PlayerCharacter.playChar.cokeOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.cokeCost * amount;
+			PlayerCharacter.playChar.cokeOwned -= cokeAmount;
+			PlayerCharacter.playChar.cash += BMD.cokeCost * cokeAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 
 	public void buyHeroin()
 	{
-		if (PlayerCharacter.playChar.cash >= BMD.heroinCost * amount) 
+		if (PlayerCharacter.playChar.cash >= BMD.heroinCost * heroinAmount && PlayerCharacter.playChar.drugsOwned < PlayerCharacter.playChar.drugMax 
+			&& PlayerCharacter.playChar.drugsOwned + heroinAmount <= PlayerCharacter.playChar.drugMax) 
 		{
-			PlayerCharacter.playChar.heroinOwned += amount;
-			PlayerCharacter.playChar.cash -= BMD.heroinCost * amount;
+			PlayerCharacter.playChar.heroinOwned += heroinAmount;
+			PlayerCharacter.playChar.cash -= BMD.heroinCost * heroinAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		} 
 	}
 
 	public void sellHeroin()
 	{
-		if (PlayerCharacter.playChar.heroinOwned >= amount) 
+		if (PlayerCharacter.playChar.heroinOwned >= heroinAmount) 
 		{
-			PlayerCharacter.playChar.heroinOwned -= amount;
-			PlayerCharacter.playChar.cash += BMD.heroinCost * amount;
+			PlayerCharacter.playChar.heroinOwned -= heroinAmount;
+			PlayerCharacter.playChar.cash += BMD.heroinCost * heroinAmount;
+			AudioSource.PlayClipAtPoint (kaChing, new Vector3(0,0,-10));
 		}
 	}
 }
