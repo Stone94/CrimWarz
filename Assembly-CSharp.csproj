@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\CopsAndRobbers.cs" />
      <Compile Include="Assets\Scripts\DepositButton.cs" />
      <Compile Include="Assets\Scripts\Drugs.cs" />
+     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
      <Compile Include="Assets\Scripts\GameOverConditions.cs" />
      <Compile Include="Assets\Scripts\GamePause.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />

@@ -24,12 +24,12 @@ public class PersistantGUI : MonoBehaviour {
 	{
 		playerFuelDisp.text = "Fuel: " + PlayerCharacter.playChar.currentFuel + "/" + PlayerCharacter.playChar.maxFuel;
 		playerHealthDisp.text = "Health: " + PlayerCharacter.playChar.health;
-		playerBankDisp.text = "Bank: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.bankBalance);
+		playerBankDisp.text = "Bank: $" + PlayerCharacter.playChar.bankBalance.ToKMB ();
 		playerRepDisp.text = "Rep: " + PlayerCharacter.playChar.rep;
 		dateDisp.text = "Days: " + PlayerCharacter.playChar.days + "/" + PlayerCharacter.playChar.maxGameDays;
 		timeDisp.text = "Time: " + PlayerCharacter.playChar.hours;
-		moneyDisp.text = "Cash: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.cash);
-		debtDisp.text = "Debt: $" + Mathf.RoundToInt((float)PlayerCharacter.playChar.debtLeft);
+		moneyDisp.text = "Cash: $" + PlayerCharacter.playChar.cash.ToKMB();
+		debtDisp.text = "Debt: $" + PlayerCharacter.playChar.debtLeft.ToKMB();
 		DrugsOwnedDisp.text = "Cargo Hold: \n" + PlayerCharacter.playChar.drugsOwned + "/" + PlayerCharacter.playChar.drugMax;
 	}
 }

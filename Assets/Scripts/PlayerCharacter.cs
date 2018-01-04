@@ -66,16 +66,6 @@ public class PlayerCharacter : MonoBehaviour
 		
 	void playerCaps ()
 	{
-		if (playChar.cash > 9999999999999999)
-		{
-			playChar.cash = 9999999999999999;
-		}
-
-		if (playChar.bankBalance > 9999999999999999)
-		{
-			playChar.bankBalance = 9999999999999999;
-		}
-
 		drugsOwned = ludesOwned + shroomOwned + weedOwned + LSDOwned + methOwned + speedOwned + heroinOwned + cokeOwned;
 	}
 		
